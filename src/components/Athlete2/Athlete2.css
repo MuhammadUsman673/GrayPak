@@ -1,36 +1,135 @@
 .alastair-section {
-    position: relative;
-    background-size: cover;
-    background-position:initial ;
-background-size:cover;
-    margin: 0 1rem;
-    padding: 4rem 0;
-    color: white;
-    text-align: center;
-margin-left: 80px;
-margin-right: 80px;
-height: 170px;
-margin-top: -40px;
-margin-bottom: 50px;
+  position: relative;
+  background-size:cover;
+  background-position:inherit;
+  margin: 0 auto;
+  padding: 4rem 1rem;
+  color: white;
+  text-align: center;
+  height: auto;
+  min-height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -40px;
+  margin-bottom: 50px;
+  width: calc(100% - 160px);
+  max-width: 1400px;
 }
-  
-  .overlay {
-    /* background-color: rgba(0, 0, 0, 0.5); */
-    padding: 2rem;
+
+.overlay {
+  width: 100%;
+  padding: 2rem;
+}
+
+.heading {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.description {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  text-align: center;
+  color: white;
+  margin: 1rem auto 0;
+  max-width: 800px;
+  line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .alastair-section {
+    width: calc(100% - 100px);
+    padding: 3rem 1rem;
   }
   
   .heading {
-    font-size: 2rem;
-    font-weight: bold;
-    text-align: left;
-    margin-left: 140px;
+    font-size: 1.8rem;
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 992px) {
+  .alastair-section {
+    width: calc(100% - 80px);
+    padding: 2.5rem 1rem;
+  }
+  
+  .heading {
+    font-size: 1.6rem;
+    max-width: 600px;
   }
   
   .description {
-    margin-top: 1rem;
-    font-size: 0.8rem;
-    text-align: left;
-    margin-left: 140px;
-    color: white;
+    font-size: 0.85rem;
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+  .alastair-section {
+    width: calc(100% - 60px);
+    padding: 2rem 1rem;
+    margin-top: -30px;
+    margin-bottom: 40px;
   }
   
+  .heading {
+    font-size: 1.4rem;
+    max-width: 500px;
+  }
+  
+  .description {
+    font-size: 0.8rem;
+    max-width: 500px;
+  }
+  
+  .overlay {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .alastair-section {
+    width: calc(100% - 40px);
+    padding: 1.5rem 1rem;
+    margin-bottom: 30px;
+  }
+  
+  .heading {
+    font-size: 1.2rem;
+    max-width: 400px;
+  }
+  
+  .description {
+    font-size: 0.75rem;
+    max-width: 400px;
+  }
+  
+  .overlay {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .alastair-section {
+    width: calc(100% - 20px);
+    padding: 1rem;
+    margin-top: -20px;
+    margin-bottom: 20px;
+  }
+  
+  .heading {
+    font-size: 1.1rem;
+    max-width: 300px;
+  }
+  
+  .description {
+    font-size: 0.7rem;
+    max-width: 300px;
+  }
+}

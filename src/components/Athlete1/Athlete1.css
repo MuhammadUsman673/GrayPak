@@ -1,73 +1,249 @@
 /* General section styling */
 .athlete-section {
-    margin: 0 8%; /* Margin from both left and right */
-    padding: 40px 0;
+  margin: 0 8%; /* Margin from both left and right */
+  padding: 40px 0;
+  box-sizing: border-box;
+}
+
+/* Heading styling */
+.athlete-heading {
+  font-size: 3.9rem;
+  font-weight: 500;
+  text-align: left;
+  margin-bottom: 8px;
+  margin-top: 5px;
+}
+
+/* Paragraph styling */
+.athlete-description {
+  font-size: 1.4rem;
+  text-align: left;
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+
+/* Athlete grid container */
+.athlete-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Row styling for first two rows */
+.athlete-row {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+/* Athlete image container */
+.athlete-image-container {
+  position: relative;
+  text-align: center;
+}
+
+/* Athlete images */
+.athlete-image {
+  width: 100%;
+  max-width: 350px;
+  height: 450px;
+  transition: transform 0.3s ease-in-out;
+  object-fit: cover;
+}
+
+/* Hover effect for images */
+.athlete-image-container:hover .athlete-image {
+  transform: scale(1.05);
+}
+
+/* Caption styling */
+.athlete-caption {
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 15px;
+  margin-left: 10px;
+}
+
+/* Centered single image in third row */
+.athlete-single {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+/* Responsive adjustments */
+@media only screen and (max-width: 1024px) {
+  .athlete-section {
+      margin: 0 6%;
+      padding: 30px 0;
   }
-  
-  /* Heading styling */
+
   .athlete-heading {
-    font-size: 3.9rem;
-    font-weight: 500;
-    text-align: left;
-    margin-bottom: 8px;
-    margin-top: 5px;
+      font-size: 3.2rem;
   }
-  
-  /* Paragraph styling */
+
   .athlete-description {
-    font-size: 1.4rem;
-    text-align: left;
-    margin-bottom:40px;
-    margin-top: 40px;
+      font-size: 1.2rem;
+      margin: 30px 0;
   }
-  
-  /* Athlete grid container */
-  .athlete-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-  
-  /* Row styling for first two rows */
-  .athlete-row {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-  }
-  
-  /* Athlete image container */
-  .athlete-image-container {
-    position: relative;
-    text-align: center;
-  }
-  
-  /* Athlete images */
+
   .athlete-image {
-    width: 100%;
-    max-width: 350px;
-    height: 450px;
-    transition: transform 0.3s ease-in-out;
-    object-fit: cover;
+      max-width: 300px;
+      height: 400px;
   }
-  
-  /* Hover effect for images */
-  .athlete-image-container:hover .athlete-image {
-    transform: scale(1.05);
+}
+
+@media only screen and (max-width: 768px) {
+  .athlete-section {
+      margin: 0 5%;
+      padding: 25px 0;
   }
-  
-  /* Caption styling */
+
+  .athlete-heading {
+      font-size: 2.8rem;
+  }
+
+  .athlete-description {
+      font-size: 1.1rem;
+      margin: 25px 0;
+  }
+
+  .athlete-row {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+  }
+
+  .athlete-image {
+      max-width: 280px;
+      height: 360px;
+  }
+
   .athlete-caption {
-    font-size: 0.9rem;
-    font-weight: bold;
-    text-align: left;
-    margin-top: 15px;
-    margin-left: 10px;
+      font-size: 0.85rem;
+      margin-top: 12px;
+      margin-left: 8px;
   }
-  
-  /* Centered single image in third row */
+
   .athlete-single {
-    display: flex;
-    justify-content: center;
-    margin-top: 16px;
+      margin-top: 20px;
   }
-  
+}
+
+@media only screen and (max-width: 600px) {
+  .athlete-section {
+      margin: 0 4%;
+      padding: 20px 0;
+  }
+
+  .athlete-heading {
+      font-size: 2.4rem;
+  }
+
+  .athlete-description {
+      font-size: 1rem;
+      margin: 20px 0;
+  }
+
+  .athlete-image {
+      max-width: 250px;
+      height: 320px;
+  }
+
+  .athlete-caption {
+      font-size: 0.8rem;
+      margin-top: 10px;
+      margin-left: 6px;
+  }
+
+  .athlete-grid {
+      gap: 12px;
+  }
+
+  .athlete-row {
+      gap: 16px;
+  }
+
+  .athlete-single {
+      margin-top: 16px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .athlete-section {
+      margin: 0 3%;
+      padding: 15px 0;
+  }
+
+  .athlete-heading {
+      font-size: 2rem;
+  }
+
+  .athlete-description {
+      font-size: 0.9rem;
+      margin: 15px 0;
+  }
+
+  .athlete-image {
+      max-width: 220px;
+      height: 280px;
+  }
+
+  .athlete-caption {
+      font-size: 0.75rem;
+      margin-top: 8px;
+      margin-left: 5px;
+  }
+
+  .athlete-grid {
+      gap: 10px;
+  }
+
+  .athlete-row {
+      gap: 12px;
+  }
+
+  .athlete-single {
+      margin-top: 12px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .athlete-section {
+      margin: 0 2%;
+      padding: 10px 0;
+  }
+
+  .athlete-heading {
+      font-size: 1.8rem;
+  }
+
+  .athlete-description {
+      font-size: 0.85rem;
+      margin: 12px 0;
+  }
+
+  .athlete-image {
+      max-width: 200px;
+      height: 250px;
+  }
+
+  .athlete-caption {
+      font-size: 0.7rem;
+      margin-top: 6px;
+      margin-left: 4px;
+  }
+
+  .athlete-grid {
+      gap: 8px;
+  }
+
+  .athlete-row {
+      gap: 10px;
+  }
+
+  .athlete-single {
+      margin-top: 10px;
+  }
+}

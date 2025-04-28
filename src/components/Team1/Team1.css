@@ -1,46 +1,154 @@
 .teamwear-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10rem;
-    padding: 2rem 4rem;
-    margin: 0 auto;
-    cursor: pointer;
-    margin-top: 30px;
-    margin-bottom: 100px;
-  }
-  
-  .teamwear-box {
-    text-align: center;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .teamwear-box:hover {
-    transform: scale(1.05);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10rem;
+  padding: 2rem 4rem;
+  margin: 0 auto;
+  cursor: pointer;
+  margin-top: 30px;
+  margin-bottom: 100px;
+  flex-wrap: wrap; /* Added for responsiveness */
+}
+
+.teamwear-box {
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  min-width: 300px; /* Prevents boxes from becoming too narrow */
+}
+
+.teamwear-box:hover {
+  transform: scale(1.05);
+}
+
+.teamwear-title {
+  font-size: 5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: black;
+}
+
+.teamwear-button {
+  margin-top: 20px; /* Consolidated margin-top */
+  background-color: #e60000;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.teamwear-button:hover {
+  background-color: #cc0000;
+}
+
+/* Responsive Design */
+@media (max-width: 1600px) {
+  .teamwear-section {
+    gap: 8rem;
   }
   
   .teamwear-title {
-    font-size: 5rem;
-    font-weight: 700;
-    line-height: 1.2;
-    color: black;
+    font-size: 4.5rem;
   }
   
   .teamwear-button {
-    margin-top: -2rem;
-    background-color: #e60000;
-    color: white;
-    padding: 0.5rem 1.5rem;
-    font-size: 1.8rem;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    font-size: 1.6rem;
+  }
+}
 
+@media (max-width: 1200px) {
+  .teamwear-section {
+    gap: 6rem;
+    padding: 2rem 3rem;
   }
   
-  .teamwear-button:hover {
-    background-color: #cc0000;
+  .teamwear-title {
+    font-size: 4rem;
   }
   
+  .teamwear-button {
+    font-size: 1.5rem;
+    padding: 0.5rem 1.3rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .teamwear-section {
+    gap: 4rem;
+    padding: 2rem;
+    margin-bottom: 80px;
+  }
+  
+  .teamwear-title {
+    font-size: 3.5rem;
+  }
+  
+  .teamwear-button {
+    font-size: 1.4rem;
+    padding: 0.5rem 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .teamwear-section {
+    gap: 3rem;
+    padding: 1.5rem;
+    flex-direction: column; /* Stack items vertically */
+    margin-bottom: 60px;
+  }
+  
+  .teamwear-box {
+    margin-bottom: 2rem;
+  }
+  
+  .teamwear-title {
+    font-size: 3.2rem;
+  }
+  
+  .teamwear-button {
+    font-size: 1.3rem;
+    padding: 0.4rem 1.1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .teamwear-section {
+    gap: 2rem;
+    padding: 1rem;
+    margin-top: 20px;
+    margin-bottom: 50px;
+  }
+  
+  .teamwear-title {
+    font-size: 2.8rem;
+  }
+  
+  .teamwear-button {
+    font-size: 1.2rem;
+    padding: 0.4rem 1rem;
+    margin-top: 15px;
+  }
+  
+  .teamwear-box {
+    min-width: 250px;
+  }
+}
+
+@media (max-width: 400px) {
+  .teamwear-title {
+    font-size: 2.4rem;
+  }
+  
+  .teamwear-button {
+    font-size: 1.1rem;
+    padding: 0.4rem 0.9rem;
+  }
+  
+  .teamwear-box {
+    min-width: 200px;
+  }
+} 
