@@ -1,0 +1,16 @@
+/* Apply Roboto font to the body */
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Apply Poppins font to headings */
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600; /* Semi-bold */
+}
+
+/* Apply Roboto font to paragraphs */
+p {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400; /* Regular */
+}

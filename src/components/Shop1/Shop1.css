@@ -1,0 +1,116 @@
+.shop-page {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Main Heading */
+.main-heading {
+    font-size: 4rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    margin-top: 75px;
+}
+
+/* The Bats Section */
+.category-heading {
+    font-size: 2rem;
+    font-weight: 400;
+    text-align: left;
+    margin-top: 80px;
+}
+
+/* Categories - Starts Exactly Below "The Bats" with Same Left Margin */
+.categories-container {
+    margin-left: 0;
+}
+
+.categories {
+    display: flex;
+    gap: 30px;
+}
+
+/* Category Items in a Row */
+.category {
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease-in-out;
+    margin-top: 20px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.category:hover,
+.category.active {
+    border-bottom: 2px solid black;
+    font-weight: bold;
+}
+
+/* Bats Display Section */
+.bat-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    padding-top: 20px;
+}
+
+/* Individual Bat Item */
+.bat-item {
+    position: relative;
+    text-align: center;
+    padding: 15px;
+    transition: transform 0.3s ease-in-out;
+    /* background: #f9f9f9; */
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+}
+
+.bat-item:hover {
+    transform: scale(1.05);
+}
+
+/* Favorite Icon */
+.fav-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    color: gray;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+    padding: 10px;
+    padding: 15px;
+}
+
+.fav-icon:hover {
+    color: red;
+}
+
+/* Bat Image */
+.bat-image {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+
+}
+
+/* Bat Name & Price */
+.bat-name {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 10px;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+.bat-price {
+    font-size: 1rem;
+    color: #444;
+    margin-top: 5px;
+    font-weight: bold;
+    text-align: left;
+}

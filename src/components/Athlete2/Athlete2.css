@@ -1,0 +1,36 @@
+.alastair-section {
+    position: relative;
+    background-size: cover;
+    background-position:initial ;
+background-size:cover;
+    margin: 0 1rem;
+    padding: 4rem 0;
+    color: white;
+    text-align: center;
+margin-left: 80px;
+margin-right: 80px;
+height: 170px;
+margin-top: -40px;
+margin-bottom: 50px;
+}
+  
+  .overlay {
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    padding: 2rem;
+  }
+  
+  .heading {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: left;
+    margin-left: 140px;
+  }
+  
+  .description {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    text-align: left;
+    margin-left: 140px;
+    color: white;
+  }
+  

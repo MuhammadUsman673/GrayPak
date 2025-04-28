@@ -1,0 +1,46 @@
+.teamwear-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10rem;
+    padding: 2rem 4rem;
+    margin: 0 auto;
+    cursor: pointer;
+    margin-top: 30px;
+    margin-bottom: 100px;
+  }
+  
+  .teamwear-box {
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .teamwear-box:hover {
+    transform: scale(1.05);
+  }
+  
+  .teamwear-title {
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: black;
+  }
+  
+  .teamwear-button {
+    margin-top: -2rem;
+    background-color: #e60000;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+  }
+  
+  .teamwear-button:hover {
+    background-color: #cc0000;
+  }
+  

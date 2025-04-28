@@ -1,0 +1,103 @@
+.shop-page {
+    width: 80%;
+
+}
+
+/* Main Heading */
+.main-heading {
+    font-size: 4rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* The Balls Section */
+.category-heading {
+    font-size: 2rem;
+    font-weight: 400;
+    text-align: left;
+}
+
+/* Categories - Starts Exactly Below "The Balls" with Same Left Margin */
+.categories-container {
+    margin-left: 0;
+}
+
+.categories {
+    display: flex;
+    gap: 30px;
+    margin-top: -50px;
+}
+
+/* Category Items in a Row */
+.category {
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease-in-out;
+    margin-top: 80px;
+}
+
+.category:hover,
+.category.active {
+    border-bottom: 2px solid black;
+    font-weight: bold;
+}
+
+/* Balls Display Section */
+.ball-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    justify-items: center;
+}
+
+/* Individual Ball Item */
+.ball-item {
+    position: relative;
+    text-align: left;
+    padding: 15px;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.ball-item:hover {
+    transform: scale(1.05);
+}
+
+/* Favorite Icon */
+.fav-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    color: gray;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+    padding: 20px;
+}
+
+.fav-icon:hover {
+    color: red;
+}
+
+/* Ball Image */
+.ball-image {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+}
+
+/* Ball Name & Price */
+.ball-name {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.ball-price {
+    font-size: 1rem;
+    color: #444;
+    margin-top: 5px;
+}

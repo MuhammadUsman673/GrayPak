@@ -1,0 +1,74 @@
+.revo-wrapper {
+    width: 95%;
+    margin: 50px auto;
+    height: 580px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.revo-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../../assets/ncore.webp") center/cover no-repeat;
+    transition: transform 0.5s ease-in-out;
+
+}
+
+.revo-wrapper:hover::before {
+    transform: scale(1.1);
+}
+
+.revo-content-box {
+    position: relative;
+    text-align: center;
+    padding: 20px 40px;
+    border-radius: 5px;
+}
+
+.revo-waitlist-text {
+    font-size: 3rem;
+    font-weight: 400;
+    color: white;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    /* background: rgba(255, 255, 255, 0.2); */
+    
+    border-radius: 5px;
+    display: inline-block;
+    letter-spacing: 1px;
+}
+
+.revo-main-title {
+    font-size: 5rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 10px;
+    letter-spacing: 1.5px;
+    margin-top: 0px;
+}
+
+.revo-shop-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    /* background: rgba(255, 255, 255, 0.2); */
+    background: red;
+    transition: background 0.3s ease-in-out;
+    margin-top: 5px;
+}
+
+.revo-shop-btn:hover {
+    /* background: rgba(255, 255, 255, 0.4); */
+    background-color: black;
+}

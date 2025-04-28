@@ -1,0 +1,745 @@
+/* General Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 30px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+    /* width: 94.5vw; */
+}
+
+/* Logo */
+.navbar-logo img {
+    height: 55px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar-logo img:hover {
+    transform: scale(1.1);
+}
+
+/* Toggle Button (for mobile) */
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.menu-toggle:hover {
+    transform: scale(1.1);
+}
+
+/* Navigation Links */
+.navbar-links {
+    display: flex;
+    gap: 25px;
+    padding: 10px 20px;
+}
+
+/* Main Navigation Links */
+.navbar-links .main-link {
+    text-decoration: none;
+    color: black; /* Default color for main links */
+    font-weight: 500;
+    font-size: 18px;
+    transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    padding: 10px 15px;
+}
+
+/* Hover Effect for Main Links */
+.navbar-links .main-link:hover {
+    background-color: black;
+    color: white; /* Hover color for main links */
+    transform: scale(1.1);
+}
+
+/* Icons and Login Section */
+.navbar-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-weight: 500;
+}
+
+.icon {
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+    text-decoration: none;
+}
+
+/* Favourites Icon */
+.favourites-icon {
+    font-size: 20px;
+    color: black;
+    padding: 5px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease-in-out;
+}
+
+
+
+/* Cart Button */
+.cart-button {
+    background-color:#d50000;
+    color: white;
+    padding: 10px 18px;
+    font-weight: bold;
+    font-size: 18px;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.cart-button:hover {
+    background-color: darkred;
+    transform: scale(1.1);
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+}
+
+/* Shop Button */
+.dropdown-btn {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    font-size: 18px;
+    padding: 10px 15px;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Full-width Dropdown Menu */
+.dropdown-menu {
+    position: absolute;
+    top: 150%; /* Below the navbar */
+    left: 190%; /* Center the dropdown */
+    transform: translateX(-50%); /* Center the dropdown */
+     /* Full width of the screen */
+    background: white;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 30px ;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+margin-left: 150px;
+    gap: 10px;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Sub-Elements in Dropdown */
+.dropdown-menu .sub-link {
+    text-decoration: none;
+    color: black; /* Default color for sub-elements */
+    font-size: 18px;
+    transition: color 0.3s ease-in-out;
+    padding: 10px 23px;
+    font-weight: 1000;
+    
+
+}
+
+/* Hover Effect for Sub-Elements */
+.dropdown-menu .sub-link:hover {
+    /* Hover color for sub-elements */
+    background-color: transparent; /* Ensure no background on hover */
+    border-bottom: 2px solid black;
+}
+
+/* Underline effect on hover for Sub-Elements */
+/* .dropdown-menu .sub-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+} */
+
+.dropdown-menu .sub-link:hover::after {
+    transform: scaleX(1);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .navbar {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px;
+    }
+
+    /* Show toggle button */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Hide navbar links by default */
+    .navbar-links {
+        display: none;
+        flex-direction: column;
+        background-color: white;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Show links when active */
+    .navbar-links.active {
+        display: flex;
+        animation: slideDown 0.3s ease-in-out;
+    }
+
+    /* Mobile Icons */
+    .navbar-icons {
+        gap: 10px;
+    }
+
+    /* Full-width dropdown on mobile */
+    .dropdown-menu {
+        width: 100%; /* Full width of the navbar */
+        left: 0;
+        transform: none; /* Reset transform */
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        padding: 10px;
+    }
+
+    .navbar-logo img {
+        height: 45px;
+    }
+
+    .navbar-links a {
+        font-size: 16px;
+        padding: 8px 12px;
+    }
+
+    .icon {
+        font-size: 18px;
+    }
+
+    .cart-button {
+        padding: 8px 14px;
+        font-size: 16px;
+    }
+}
+
+/* Slide Down Animation */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .navbar {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px;
+    }
+
+    /* Show toggle button */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Hide navbar links by default */
+    .navbar-links {
+        display: none;
+        flex-direction: column;
+        background-color: white;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Show links when active */
+    .navbar-links.active {
+        display: flex;
+        animation: slideDown 0.3s ease-in-out;
+    }
+
+    /* Mobile Icons */
+    .navbar-icons {
+        gap: 10px;
+    }
+
+    /* Full-width dropdown on mobile */
+    .dropdown-menu {
+        width: 100%; /* Full width of the navbar */
+    top:0;
+    left: -150px;
+        transform: none; /* Reset transform */
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        padding: 10px;
+    }
+
+    .navbar-logo img {
+        height: 45px;
+    }
+
+    .navbar-links a {
+        font-size: 16px;
+        padding: 8px 12px;
+    }
+
+    .icon {
+        font-size: 18px;
+    }
+
+    .cart-button {
+        padding: 8px 14px;
+        font-size: 16px;
+    }
+}
+
+/* Slide Down Animation */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Sub-Item Container */
+.sub-item {
+    position: relative;
+}
+
+/* Sub-Types Container */
+.sub-types {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between types */
+    justify-content: center;
+    margin-top: 30px; /* Space between sub-link and types */
+ 
+}
+
+/* Sub-Type Links */
+.sub-type-link {
+    text-decoration: none;
+    color: black; /* Default color for types */
+    font-size: 14px;
+    font-weight: 400;
+    transition: color 0.3s ease-in-out;
+    margin-left: 25px;
+    
+}
+
+/* Hover Effect for Sub-Type Links */
+.sub-type-link:hover {
+    color: #007bff; /* Hover color for types */
+}
+
+
+
+
+
+
+/* Families Dropdown */
+.families-dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .families-btn {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+    display: block;
+  }
+  
+  /* The main dropdown menu */
+  .families-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    width: 100vw;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 5px;
+    z-index: 100;
+    margin-top: 16px;
+    margin-left: -570px;
+
+  }
+  
+  /* Show full menu on hover */
+  .families-dropdown:hover .families-menu {
+    display: block;
+  }
+  
+  /* Align family names horizontally */
+  .families-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+   
+  }
+  
+  /* Style each family item */
+  .family-item {
+
+    margin-left: 30px;
+  }
+  
+  .family-link {
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    transition: color 0.3s;
+    text-align: center;
+  }
+  
+  .family-link:hover {
+    color: red;
+  }
+  
+  /* Sub-items are now always visible inside the dropdown */
+  .family-types {
+    display: block;  /* Always visible */
+    background: white;
+    padding: 5px;
+    text-align: center;
+  }
+  
+  /* Style each type link */
+  .family-type-link {
+    color: #555;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    transition: color 0.3s;
+    text-align: center;
+
+  }
+
+  
+  .family-type-link:hover {
+    color: #d50000;
+    font-weight: bold;
+  }
+  
+  
+  
+
+
+
+  .shop-nav-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.shop-nav-btn {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+    display: block;
+}
+
+/* The main dropdown menu */
+.shop-nav-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    width: 100vw;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 5px;
+    z-index: 100;
+    margin-left: -470px;
+    margin-top: 16px;
+}
+
+/* Show full menu on hover */
+.shop-nav-dropdown:hover .shop-nav-menu {
+    display: block;
+}
+
+/* Align categories horizontally */
+.shop-nav-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+/* Style each category */
+.shop-category {
+    text-align: center;
+    margin-left: 30px;
+}
+
+.shop-category-link {
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+    display: block;
+    padding: 15px;
+    transition: color 0.3s;
+}
+
+.shop-category-link:hover {
+    color: red;
+}
+
+/* Subcategories */
+.shop-subcategory {
+    display: block; /* Always visible */
+    background: white;
+    padding: 5px;
+text-align: center;
+}
+
+/* Subcategory links */
+.shop-sub-link {
+    color: #555;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    transition: color 0.3s;
+}
+
+.shop-sub-link:hover {
+    color: #d50000;
+    font-weight: bold;
+}
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+/* Teamwear Dropdown */
+.teamwear-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.teamwear-btn {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+    display: block;
+}
+
+/* The main dropdown menu */
+.teamwear-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    width: 100vw;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 5px;
+    z-index: 100;
+    margin-left: -690px;
+    margin-top: 16px;
+}
+
+/* Show full menu on hover */
+.teamwear-dropdown:hover .teamwear-menu {
+    display: block;
+}
+
+/* Align categories horizontally */
+.teamwear-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+/* Style each category */
+.teamwear-category {
+    text-align: center;
+}
+
+.teamwear-category-link {
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    transition: color 0.3s;
+}
+
+.teamwear-category-link:hover {
+    color: red;
+}
+
+/* Subcategories */
+.teamwear-subcategories {
+    display: block; /* Always visible */
+    background: white;
+    padding: 5px;
+    text-align: center;
+}
+
+/* Subcategory links */
+.teamwear-sub-link {
+    color: #555;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    transition: color 0.3s;
+}
+
+.teamwear-sub-link:hover {
+    color: #d50000;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+/* Athletes Dropdown */
+.athletes-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.athletes-btn {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+    display: block;
+}
+
+/* The main dropdown menu */
+.athletes-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    width: 99vw;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 5px;
+    z-index: 100;
+    margin-left: -810px;
+    margin-top: 16px;
+}
+
+/* Show full menu on hover */
+.athletes-dropdown:hover .athletes-menu {
+    display: block;
+}
+
+/* Align categories horizontally */
+.athletes-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+/* Style each category */
+.athlete-category {
+    text-align: center;
+}
+
+.athlete-category-link {
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    transition: color 0.3s;
+}
+
+.athlete-category-link:hover {
+    color: red;
+}
+
+/* Subcategories */
+.athlete-subcategories {
+    display: block; /* Always visible */
+    background: white;
+    padding: 5px;
+    text-align: center;
+}
+
+/* Subcategory links */
+.athlete-sub-link {
+    color: #555;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    transition: color 0.3s;
+}
+
+.athlete-sub-link:hover {
+    color: #d50000;
+    font-weight: bold;
+}
+.families-dropdown img{
+    width: 150px;
+    height: 100px;
+}

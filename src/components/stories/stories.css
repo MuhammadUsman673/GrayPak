@@ -1,0 +1,117 @@
+.our-stories-container {
+    width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    position: relative;
+    margin-left: 40px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.text-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.greatness-heading {
+    font-size: 1.7rem;
+    font-weight: 400;
+    color: #333;
+}
+
+.stories-heading {
+    font-size: 6rem;
+    font-weight: 400;
+    color: #000;
+    margin-top: -15px;
+}
+
+.nav-icons1 {
+    display: flex;
+    gap: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-top: 150px;
+    margin-right: -180px;
+}
+
+.icon1 {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    color: white;
+    transition: background 0.3s ease-in-out;
+    cursor: pointer;
+    background-color: black;
+    border-radius: 5px;
+}
+
+.icon:hover {
+    background: #f0f0f0;
+}
+
+/* Stories container with horizontal scrolling */
+.stories-images-wrapper {
+    overflow-x: auto;
+    white-space: nowrap;
+    width: 100%;
+    margin-top: -40px;
+    padding-bottom: 10px;
+    margin-left: 180px;
+    scrollbar-width: thin;
+    scrollbar-color: black transparent;
+}
+
+/* Hide default scrollbar */
+.stories-images-wrapper::-webkit-scrollbar {
+    height: 1px;
+    background: transparent;
+}
+
+.stories-images-wrapper::-webkit-scrollbar-thumb {
+    background: black;
+    border-radius: 1px;
+}
+
+/* Flex container for images */
+.stories-images {
+    display: flex;
+    gap: 15px;
+    width: max-content; /* Allows images to extend horizontally */
+}
+
+/* Each image container */
+.story-image-container {
+    position: relative;
+    overflow: hidden;
+    width: 900px;  /* Increased width */
+    height: 500px;
+}
+
+/* Image zoom effect */
+.story-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease-in-out;
+}
+
+.story-image-container:hover .story-image {
+    transform: scale(1.2);
+}
+
+/* Text inside the image */
+.image-caption {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    color: white;
+    padding: 8px 12px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+}
+
+/* Horizontal Scrollbar as a thin black line */

@@ -1,0 +1,127 @@
+.shop-page1 {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Main Heading */
+.main-heading1 {
+    font-size: 4rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    margin-top: 75px;
+}
+
+/* The Bats Section */
+.category-heading1 {
+    font-size: 2rem;
+    font-weight: 400;
+    text-align: left;
+    margin-top: 80px;
+}
+
+/* New Products Info - Ensuring Proper Spacing */
+.new-products-info1{
+    font-size: 1rem;
+    color: #555;
+    font-weight: 400;
+    margin-bottom: 20px; /* Space below the text */
+    margin-top: -5px; /* Space above the text */
+    padding: 10px 0; /* Adds spacing to prevent collapse */
+    display: block; /* Ensures it behaves as a block element */
+    clear: both; /* Clears floating elements if any */
+}
+
+/* Categories Container */
+.categories-container1 {
+    margin-left: 0;
+    margin-top: 30px; /* Increased margin to ensure separation */
+}
+
+/* Categories */
+.categories1 {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* Category Items */
+.category1 {
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease-in-out;
+    margin-top: 20px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.category1:hover,
+.category1.active {
+    border-bottom: 2px solid black;
+    font-weight: bold;
+}
+
+/* Bats Display Section */
+.bat-list1 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    padding-top: 20px;
+}
+
+/* Individual Bat Item */
+.bat-item1 {
+    position: relative;
+    text-align: center;
+    padding: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.bat-item1:hover {
+    transform: scale(1.05);
+}
+
+/* Favorite Icon */
+.fav-icon1 {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    color: gray;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+    padding: 15px;
+}
+
+.fav-icon1:hover {
+    color: red;
+}
+
+/* Bat Image */
+.bat-image1 {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+/* Bat Name & Price */
+.bat-name1 {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 10px;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+.bat-price1 {
+    font-size: 1rem;
+    color: #444;
+    margin-top: 5px;
+    font-weight: bold;
+    text-align: left;
+}

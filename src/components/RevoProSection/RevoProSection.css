@@ -1,0 +1,59 @@
+.revo-pro-section {
+    width: 95%; /* Margin from left & right */
+    margin: 50px auto; /* Centers section */
+    height: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    
+    overflow: hidden; /* Prevents image overflow */
+  }
+  
+  .revo-pro-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../../assets/kusal.webp") center/cover no-repeat;
+    transition: transform 0.5s ease-in-out;
+    
+  }
+  
+  .revo-pro-section:hover::before {
+    transform: scale(1.1); /* Zooms in the background inside */
+  }
+  
+  .revo-content {
+    position: relative;
+    text-align: center;
+    /* background: rgba(0, 0, 0, 0.5);  */
+    padding: 20px 40px;
+    border-radius: 5px;
+  }
+  
+  .revo-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
+  }
+  
+  .shop-now-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    /* background: #000; */
+    text-decoration: none;
+  
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .shop-now-btn:hover {
+    background: #333;
+  }
+  

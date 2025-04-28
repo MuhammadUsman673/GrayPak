@@ -1,0 +1,73 @@
+/* General section styling */
+.athlete-section {
+    margin: 0 8%; /* Margin from both left and right */
+    padding: 40px 0;
+  }
+  
+  /* Heading styling */
+  .athlete-heading {
+    font-size: 3.9rem;
+    font-weight: 500;
+    text-align: left;
+    margin-bottom: 8px;
+    margin-top: 5px;
+  }
+  
+  /* Paragraph styling */
+  .athlete-description {
+    font-size: 1.4rem;
+    text-align: left;
+    margin-bottom:40px;
+    margin-top: 40px;
+  }
+  
+  /* Athlete grid container */
+  .athlete-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  /* Row styling for first two rows */
+  .athlete-row {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+  }
+  
+  /* Athlete image container */
+  .athlete-image-container {
+    position: relative;
+    text-align: center;
+  }
+  
+  /* Athlete images */
+  .athlete-image {
+    width: 100%;
+    max-width: 350px;
+    height: 450px;
+    transition: transform 0.3s ease-in-out;
+    object-fit: cover;
+  }
+  
+  /* Hover effect for images */
+  .athlete-image-container:hover .athlete-image {
+    transform: scale(1.05);
+  }
+  
+  /* Caption styling */
+  .athlete-caption {
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: left;
+    margin-top: 15px;
+    margin-left: 10px;
+  }
+  
+  /* Centered single image in third row */
+  .athlete-single {
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+  }
+  
