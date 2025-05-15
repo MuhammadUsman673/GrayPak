@@ -5,7 +5,7 @@ import AlastairCookSection from '../Athlete2/Athlete2'
 const Athlete = () => {
   return (
 <>
-<Header/>
+{/* <Header/> */}
 <AthleteSection/>
 <AlastairCookSection/>
 </>

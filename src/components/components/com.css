@@ -107,3 +107,22 @@
 .collection-item {
   text-decoration: none; /* Removes underline from the whole link */
 }
+
+
+
+
+
+
+
+.search-result-text {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #333;
+  text-align: center;
+}
+.no-results {
+  font-size: 1rem;
+  color: #666;
+  text-align: center;
+  margin: 20px 0;
+}

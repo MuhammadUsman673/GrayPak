@@ -10,13 +10,13 @@ import Footer from '../footer/Footer'
 const Shop = () => {
   return (
     <>
-    <Header/>
+    {/* <Header/> */}
     <ShopPage/>
     <NewSection/>
     <ShopPage2/>
     <NewSection1/>
     <ShopPage3/>
-    <Footer/>
+    {/* <Footer/> */}
     </>
   )
 }

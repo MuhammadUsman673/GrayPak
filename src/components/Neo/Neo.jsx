@@ -1,14 +1,27 @@
-import React from "react";
+// src/components/RevoProSection.jsx
+import React, { useContext } from "react";
 import "./Neo.css";
-import { Link } from "react-router-dom";
+import { ShopContext } from "../../context/ShopContext";
 
 const RevoProSection = () => {
+  const { toggleAuthModal } = useContext(ShopContext);
+
+  console.log('ToggleAuthModal in RevoProSection:', toggleAuthModal); // Debug log
+
   return (
     <div className="revo-wrapper">
       <div className="revo-content-box">
         <p className="revo-waitlist-text">REJOIN THE WAITING LIST</p>
         <h2 className="revo-main-title">NEOCORE</h2>
-        <Link to="/revo-pro-2" className="revo-shop-btn">SIGN UP</Link>
+        <button 
+          className="revo-shop-btn" 
+          onClick={() => {
+            console.log('SIGN UP button clicked'); // Debug log
+            toggleAuthModal('signup');
+          }}
+        >
+          SIGN UP
+        </button>
       </div>
     </div>
   );

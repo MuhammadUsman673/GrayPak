@@ -1,11 +1,22 @@
 .container {
-    margin: 70px 80px; /* Adjust the margin as needed */
+    margin: 70px 80px; /* Keeping exact pixel values as requested */
     
+    /* Only add horizontal padding on small screens to prevent crowding */
+    @media (max-width: 768px) {
+        padding-left: 15px;
+        padding-right: 15px;
+        box-sizing: border-box; /* Ensures padding doesn't add to width */
+    }
 }
 
 h1 {
     font-size: 60px;
     font-weight: 500;
+    /* Fluid scaling down */
+    @media (max-width: 1200px) { font-size: 50px; }
+    @media (max-width: 992px) { font-size: 42px; }
+    @media (max-width: 768px) { font-size: 36px; }
+    @media (max-width: 576px) { font-size: 30px; }
 }
 
 p {
@@ -13,12 +24,23 @@ p {
     font-size: 20px;
     margin-top: 20px;
     font-weight: 500;
+    /* Responsive adjustments */
+    @media (max-width: 992px) { font-size: 18px; }
+    @media (max-width: 768px) { 
+        font-size: 16px; 
+        margin-bottom: 40px;
+        margin-top: 15px;
+    }
 }
 
 .image-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+    /* Stack on mobile */
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+    }
 }
 
 .image-item {
@@ -32,6 +54,11 @@ p {
     height: 450px;
     transition: transform 0.3s ease;
     object-fit: cover;
+    /* Responsive height */
+    @media (max-width: 1200px) { height: 400px; }
+    @media (max-width: 992px) { height: 350px; }
+    @media (max-width: 768px) { height: 300px; }
+    @media (max-width: 576px) { height: 250px; }
 }
 
 .image-item:hover img {
@@ -45,8 +72,9 @@ p {
     color: white;
     background: rgba(0, 0, 0, 0.5);
     padding: 5px;
+    /* Slightly larger text on bigger screens */
+    @media (min-width: 992px) {
+        font-size: 18px;
+        padding: 8px;
+    }
 }
-
-
-
-

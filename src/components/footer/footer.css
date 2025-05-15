@@ -38,6 +38,19 @@
     color: gray;
 }
 
+/* Specific styling for Gray-Nicolls links */
+.footer-column ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: text-decoration 0.3s, color 0.3s;
+}
+
+.footer-column ul li a:hover {
+    color: gray;
+    text-decoration: underline;
+}
+
 /* Right Side: Newsletter */
 .newsletter-section {
     max-width: 400px;
@@ -63,17 +76,16 @@
     flex: 1;
     padding: 10px;
     border: none;
-    border-bottom: 2px solid white; /* White bottom border */
-    border-radius: 0; /* Removes rounded corners */
+    border-bottom: 2px solid white;
+    border-radius: 0;
     background-color: black;
-    color: white; /* Ensures text is visible */
-    outline: none; /* Removes default focus outline */
+    color: white;
+    outline: none;
 }
 
 .newsletter-input input:focus {
-    border-bottom: 2px solid gray; /* Changes color on focus */
+    border-bottom: 2px solid gray;
 }
-
 
 .newsletter-input button {
     background: red;
@@ -81,12 +93,40 @@
     border: none;
     padding: 18px 35px;
     cursor: pointer;
-    
     font-weight: bold;
 }
 
 .newsletter-input button:hover {
     background: darkred;
+}
+
+/* Authentication prompt and toggle button */
+.newsletter-section .auth-prompt {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: white;
+    text-align: left;
+}
+
+.newsletter-section .auth-toggle-btn {
+    background: none;
+    border: none;
+    color: #ff0000;
+    font-size: 0.9rem;
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 0;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.newsletter-section .auth-toggle-btn:hover {
+    color: #cc0000;
+}
+
+.newsletter-section .auth-toggle-btn:focus {
+    outline: 2px solid #ff0000;
+    outline-offset: 2px;
 }
 
 /* Social Icons */
@@ -96,16 +136,25 @@
     font-size: 1.2rem;
 }
 
-.social-icons svg {
-    cursor: pointer;
-    transition: color 0.3s;
+.social-icons a {
+    color: white;
     background-color: #ff0000;
-    padding: 3px;
-
+    padding: 5px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s, background-color 0.3s;
 }
 
-.social-icons svg:hover {
+.social-icons a:hover {
     color: gray;
+    background-color: #cc0000;
+}
+
+.social-icons svg {
+    width: 20px;
+    height: 20px;
 }
 
 /* Bottom: Copyright */

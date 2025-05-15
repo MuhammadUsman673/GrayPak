@@ -20,19 +20,23 @@
     font-weight: 400;
     text-align: left;
     margin-top: 80px;
+    margin-bottom: 20px;
 }
 
-/* Categories - Starts Exactly Below "The Bats" with Same Left Margin */
+/* Categories Container */
 .categories-container {
     margin-left: 0;
+    margin-top: 30px;
 }
 
+/* Categories */
 .categories {
     display: flex;
     gap: 30px;
+    flex-wrap: wrap;
 }
 
-/* Category Items in a Row */
+/* Category Items */
 .category {
     font-size: 1.2rem;
     cursor: pointer;
@@ -53,7 +57,7 @@
 /* Bats Display Section */
 .bat-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
     justify-items: center;
     padding-top: 20px;
@@ -65,28 +69,42 @@
     text-align: center;
     padding: 15px;
     transition: transform 0.3s ease-in-out;
-    /* background: #f9f9f9; */
-    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    width: 100%;
+    max-width: 260px;
+    margin-bottom: 30px;
 }
 
 .bat-item:hover {
     transform: scale(1.05);
 }
 
-/* Favorite Icon */
-.fav-icon {
+/* Favorite Icon Button */
+.fav-icon-button {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 1.5rem;
-    color: gray;
+    top: 12px;
+    right: 12px;
+    background: none;
+    border: none;
+    padding: 5px;
     cursor: pointer;
-    transition: color 0.3s ease-in-out;
-    padding: 10px;
-    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
 }
 
-.fav-icon:hover {
+.fav-icon {
+    font-size: 1.5rem;
+    color: gray;
+    transition: color 0.3s ease-in-out;
+}
+
+.fav-icon:hover,
+.fav-icon.active {
     color: red;
 }
 
@@ -94,8 +112,10 @@
 .bat-image {
     width: 100%;
     height: 280px;
-    object-fit: cover;
-
+    object-fit: contain;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px;
 }
 
 /* Bat Name & Price */
@@ -114,3 +134,389 @@
     font-weight: bold;
     text-align: left;
 }
+
+/* Add to Cart Button */
+.add-to-cart-button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    margin-top: 10px; /* Adjusted margin-top to align below price */
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart-button:hover {
+    background-color: #333;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Shop1.css */
+/* Existing styles (ensure these are present) */
+.shop-page {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .main-heading {
+    font-size: 4rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    margin-top: 75px;
+  }
+  
+  .category-heading {
+    font-size: 2rem;
+    font-weight: 400;
+    text-align: left;
+    margin-top: 80px;
+    margin-bottom: 20px;
+  }
+  
+  .categories-container {
+    margin-left: 0;
+    margin-top: 30px;
+  }
+  
+  .categories {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  
+  .category {
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease-in-out;
+    margin-top: 20px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  
+  .category:hover,
+  .category.active {
+    border-bottom: 2px solid black;
+    font-weight: bold;
+  }
+  
+  .bat-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    padding-top: 20px;
+  }
+  
+  .bat-item {
+    position: relative;
+    text-align: center;
+    padding: 15px;
+    transition: transform 0.3s ease-in-out;
+    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    width: 100%;
+    max-width: 260px;
+    margin-bottom: 30px;
+  }
+  
+  .bat-item:hover {
+    transform: scale(1.05);
+  }
+  
+  .fav-icon-button {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: none;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+  }
+  
+  .fav-icon {
+    font-size: 1.5rem;
+    color: gray;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .fav-icon:hover,
+  .fav-icon.active {
+    color: red;
+  }
+  
+  .bat-image {
+    width: 100%;
+    height: 280px;
+    object-fit: contain;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  
+  .bat-name {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 10px;
+    text-transform: uppercase;
+    text-align: left;
+  }
+  
+  .bat-price {
+    font-size: 1rem;
+    color: #444;
+    margin-top: 5px;
+    font-weight: bold;
+    text-align: left;
+  }
+  
+  .add-to-cart-button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .add-to-cart-button:hover {
+    background-color: #333;
+  }
+  
+  /* Add styles for search feedback */
+  .search-result-text {
+    font-size: 1.2rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .no-results {
+    font-size: 1.2rem;
+    color: #666;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .shop-page {
+      width: 90%;
+    }
+  
+    .main-heading {
+      font-size: 3rem;
+      margin-top: 50px;
+      margin-bottom: 20px;
+    }
+  
+    .category-heading {
+      font-size: 1.5rem;
+      margin-top: 50px;
+      margin-bottom: 15px;
+    }
+  
+    .categories-container {
+      margin-top: 20px;
+    }
+  
+    .categories {
+      gap: 20px;
+    }
+  
+    .category {
+      font-size: 1rem;
+      margin-top: 15px;
+    }
+  
+    .bat-list {
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+    }
+  
+    .bat-item {
+      max-width: 220px;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+  
+    .bat-image {
+      height: 220px;
+      padding: 8px;
+    }
+  
+    .bat-name,
+    .bat-price {
+      font-size: 0.9rem;
+    }
+  
+    .fav-icon {
+      font-size: 1.3rem;
+    }
+  
+    .add-to-cart-button {
+      padding: 6px 10px;
+      font-size: 0.9rem;
+    }
+  
+    .search-result-text,
+    .no-results {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .shop-page {
+      width: 95%;
+    }
+  
+    .main-heading {
+      font-size: 2rem;
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+  
+    .category-heading {
+      font-size: 1.2rem;
+      margin-top: 30px;
+      margin-bottom: 10px;
+    }
+  
+    .categories-container {
+      margin-top: 15px;
+    }
+  
+    .categories {
+      gap: 15px;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .category {
+      font-size: 0.9rem;
+      margin-top: 10px;
+    }
+  
+    .bat-list {
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+  
+    .bat-item {
+      max-width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+    }
+  
+    .bat-image {
+      height: 180px;
+      padding: 6px;
+    }
+  
+    .bat-name,
+    .bat-price {
+      font-size: 0.85rem;
+    }
+  
+    .fav-icon {
+      font-size: 1.2rem;
+    }
+  
+    .fav-icon-button {
+      top: 8px;
+      right: 8px;
+    }
+  
+    .add-to-cart-button {
+      padding: 5px 8px;
+      font-size: 0.85rem;
+    }
+  
+    .search-result-text,
+    .no-results {
+      font-size: 0.9rem;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* Add these to your existing CSS */
+.categories-container {
+    overflow-y: auto;
+    max-height: calc(100vh - 200px);
+    padding-right: 10px;
+    scroll-behavior: smooth;
+  }
+  
+  /* Custom scrollbar for categories */
+  .categories-container::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .categories-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+  
+  .categories-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+  }
+  
+  .categories-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  
+  .category {
+    scroll-margin-top: 20px; /* Space from top when scrolled to */
+  }

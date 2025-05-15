@@ -5,9 +5,9 @@ import Footer from '../footer/Footer'
 const Family = () => {
   return (
     <>
-    <Header/>
+    {/* <Header/> */}
     <Families/>
-    <Footer/>
+    {/* <Footer/> */}
 
 
     </>

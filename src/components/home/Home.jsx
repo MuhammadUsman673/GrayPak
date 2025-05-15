@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './home.css';
 import Header from '../header/Header';
 import { FaHeart } from 'react-icons/fa';
+import { ShopContext } from '../../context/ShopContext';
 import ShopByCollection from '../components/Com';
 import RevoProSection from '../RevoProSection/RevoProSection';
 import FourImagesSection from '../FourImagesSection/FourImagesSection';
@@ -23,10 +25,34 @@ import bat3 from '../../assets/bat6.webp';
 import bat4 from '../../assets/bat4.webp';
 import Footer from '../footer/Footer';
 
-const ProductCard = ({ title, price, sizes, images, sizeLabel = "Glove Size" }) => {
+const ProductCard = ({ id, title, price, sizes, images, sizeLabel = "Glove Size" }) => {
   const [selectedSize, setSelectedSize] = useState(sizes[0]);
   const [quantity, setQuantity] = useState(1);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const { addToCart, addToFavorites, setCartPopupOpen } = useContext(ShopContext);
+
+  const handleAddToCart = () => {
+    const product = {
+      id,
+      name: title,
+      price: parseFloat(price.replace('£', '')),
+      image: images[0],
+      quantity: Number(quantity),
+      size: selectedSize
+    };
+    addToCart(product);
+    setCartPopupOpen(true);
+  };
+
+  const handleAddToFavorites = () => {
+    const product = {
+      id,
+      name: title,
+      price: parseFloat(price.replace('£', '')),
+      image: images[0]
+    };
+    addToFavorites(product);
+  };
 
   return (
     <div className="product-card-container">
@@ -49,7 +75,9 @@ const ProductCard = ({ title, price, sizes, images, sizeLabel = "Glove Size" }) 
       {/* Product Details */}
       <div className="product-details">
         {/* Favorite Icon */}
-        <FaHeart className="favorite-icon" />
+        <button className="favorite-icon-button" onClick={handleAddToFavorites}>
+          <FaHeart className="favorite-icon" />
+        </button>
 
         {/* Product Title */}
         <h2 className="product-title">{title}</h2>
@@ -94,7 +122,9 @@ const ProductCard = ({ title, price, sizes, images, sizeLabel = "Glove Size" }) 
               +
             </button>
           </div>
-          <button className="add-to-cart-btn">Add to cart</button>
+          <button className="add-to-cart-btn" onClick={handleAddToCart}>
+            Add to cart
+          </button>
         </div>
       </div>
     </div>
@@ -102,13 +132,17 @@ const ProductCard = ({ title, price, sizes, images, sizeLabel = "Glove Size" }) 
 };
 
 const Home = () => {
+  const navigate = useNavigate();
+
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <div className="hero-section">
         <div className="hero-content">
           <h1 className="hero-heading">HARRY'S HOUSE</h1>
-          <button className="shop-now-btn">SHOP NOW</button>
+          <button className="shop-now-btn" onClick={() => navigate('/shop')}>
+            SHOP NOW
+          </button>
         </div>
       </div>
       
@@ -116,6 +150,7 @@ const Home = () => {
       <div className="product-listing-container">
         <h2 className="section-title1">BATTING GLOVES</h2>
         <ProductCard 
+          id={101}
           title="Stratos 1.0 1500 Batting Gloves"
           price="£99.99"
           sizes={["RH - Small", "LH - Small", "RH - Adult", "LH - Adult", "RH - Large", "LH - Large"]}
@@ -127,26 +162,26 @@ const Home = () => {
       <div className="product-listing-container">
         <h2 className="section-title1">CRICKET BATS</h2>
         <ProductCard 
+          id={102}
           title="Stratos 1.0 1500 Cricket Bat"
           price="£249.99"
           sizes={["Short Handle", "Long Handle", "Harvey Handle", "Junior Size"]}
           images={[bat1, bat2, bat3, bat4]}
           sizeLabel="Bat Size" 
         />
-        
       </div>
-     <ShopByCollection/>
-     <RevoProSection/>
-     <FourImagesSection/>
-     <ShopTheLook/>
-     <RevoProSection1/>
-     <RevoProSection2/>
-     <RevoProSection4/>
-     <OurStoriesSection/>
-     <TheSquareSection/>
-     <Footer/>
+      <ShopByCollection/>
+      <RevoProSection/>
+      <FourImagesSection/>
+      <ShopTheLook/>
+      <RevoProSection1/>
+      <RevoProSection2/>
+      <RevoProSection4/>
+      <OurStoriesSection/>
+      <TheSquareSection/>
+      {/* <Footer/> */}
     </>
   );
 };
 
-export default Home; 
+export default Home;

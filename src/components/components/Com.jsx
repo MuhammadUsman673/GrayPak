@@ -13,13 +13,13 @@ import balls from "../../assets/b.jpg";
 
 // Collection Data
 const collections = [
-  { name: "All Cricket Bats", image: bats, link: "/cricket-bats" },
-  { name: "Wicketkeeping", image: wicketkeeping, link: "/wicketkeeping" },
-  { name: "Protection", image: protection, link: "/protection" },
-  { name: "Cricket Shoes", image: shoes, link: "/shoes" },
-  { name: "Clothing", image: clothing, link: "/clothing" },
-  { name: "Luggage", image: luggage, link: "/luggage" },
-  { name: "Balls", image: balls, link: "/balls" },
+  { name: "All Cricket Bats", image: bats, link: "/shop" },
+  { name: "Wicketkeeping", image: wicketkeeping, link: "/shop" },
+  { name: "Protection", image: protection, link: "/shop" },
+  { name: "Cricket Shoes", image: shoes, link: "/shop" },
+  { name: "Clothing", image: clothing, link: "/shop" },
+  { name: "Luggage", image: luggage, link: "/shop" },
+  { name: "Balls", image: balls, link: "/shop" },
 ];
 
 const ShopByCollection = () => {

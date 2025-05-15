@@ -413,3 +413,203 @@ body {
     padding: 8px 12px;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.favorite-icon-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  min-height: 44px;
+  min-width: 44px;
+}
+.favorite-icon {
+  font-size: 1.5rem;
+  color: gray;
+  transition: color 0.3s ease-in-out;
+}
+.favorite-icon:hover {
+  color: #e63946;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Existing home.css styles assumed to be unchanged */
+/* Updated styles for shop-now-btn, add-to-cart-btn, quantity controls, and favorite icon */
+
+.shop-now-btn,
+.add-to-cart-btn {
+  padding: 10px 18px;
+  border: none;
+  background: #e63946;
+  color: #fff;
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  min-height: 44px;
+  border-bottom: 2px solid transparent;
+}
+
+.shop-now-btn:hover,
+.add-to-cart-btn:hover {
+  border-bottom: 2px solid #000;
+}
+
+.shop-now-btn {
+  margin-top: 20px;
+}
+
+.add-to-cart-btn {
+  flex: 1;
+}
+
+.quantity-cart-section {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  border: 1px solid #222;
+  border-radius: 0;
+}
+
+.quantity-btn {
+  background: #fff;
+  border: none;
+  font-size: 1rem;
+  padding: 8px 12px;
+  cursor: pointer;
+  color: #222;
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.quantity-btn:hover {
+  background: #e63946;
+  color: #fff;
+}
+
+.quantity {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #222;
+  padding: 0 12px;
+  min-width: 30px;
+  text-align: center;
+}
+
+.favorite-icon-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  min-height: 44px;
+  min-width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.favorite-icon {
+  font-size: 1.5rem;
+  color: gray;
+  transition: color 0.3s ease-in-out;
+}
+
+.favorite-icon:hover {
+  color: #e63946;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.search-result-text {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #333;
+  text-align: center;
+}
+.no-results {
+  font-size: 1rem;
+  color: #666;
+  text-align: center;
+  margin: 20px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.search-result-text {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #333;
+  text-align: center;
+}
+.no-results {
+  font-size: 1rem;
+  color: #666;
+  text-align: center;
+  margin: 20px 0;
+}

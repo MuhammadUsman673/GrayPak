@@ -8,7 +8,7 @@ const RevoProSection = () => {
     <div className="revo-pro-section">
       <div className="revo-content">
         <h2 className="revo-title">REVO PRO 2</h2>
-        <Link to="/revo-pro-2" className="shop-now-btn">Shop Now</Link>
+        <Link to="/shop" className="shop-now-btn">Shop Now</Link>
       </div>
     </div>
   );

@@ -6,9 +6,9 @@ const Teamwear = () => {
    
   return (
     <>
-    <Header/>
+    {/* <Header/> */}
     <TeamwearSection/>
-    <Footer/>
+    {/* <Footer/> */}
     </>
   )
 }
