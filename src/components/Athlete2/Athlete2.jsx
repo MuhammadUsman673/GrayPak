@@ -64,7 +64,7 @@ const AlastairCookSection = () => {
         </video>
       </div>
       <AthleteSection/>
-<Footer/>
+{/* <Footer/> */}
     </>
   );
 };
