@@ -1,457 +1,305 @@
-
-/* Reset default margins and ensure full-screen behavior */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    overflow-x: hidden; /* Prevent horizontal scrollbar */
-  }
-  
-  /* General Navbar Styles */
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #ffffff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    width: 100vw;
-    max-width: 100%; /* Prevent overflow */
-    height: 70px; /* Fixed height for consistent alignment */
-  }
-  
-  /* Logo */
-  .navbar-logo {
-    display: flex;
-    align-items: center;
-  }
-  
-  .navbar-logo img {
-    height: 50px; /* Consistent height for alignment */
-    max-width: 100%;
-    object-fit: contain;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .navbar-logo img:hover {
-    transform: scale(1.1);
-  }
-  
-  /* Toggle Button (for mobile) */
-  .menu-toggle {
-    display: none;
-    font-size: 24px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out;
-    align-self: center; /* Ensure vertical centering */
-  }
-  
-  .menu-toggle:hover {
-    transform: scale(1.1);
-  }
-  
-  /* Navigation Links */
-  .navbar-links {
-    display: flex;
-    align-items: center; /* Vertically center links */
-    gap: 20px; /* Consistent spacing between links */
-    padding: 0 20px;
-  }
-  
-  /* Main Navigation Links */
-  .main-link {
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
-    font-size: 18px;
-    padding: 10px 15px;
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.2s ease-in-out;
-    display: flex;
-    align-items: center; /* Ensure text is centered vertically */
-  }
-  
-  .main-link:hover {
-    background-color: #000;
-    color: #fff;
-    transform: scale(1.05);
-  }
-  
-  /* Icons and Login Section */
-  .navbar-icons {
-    display: flex;
-    align-items: center; /* Vertically center icons */
-    gap: 15px; /* Consistent spacing */
-  }
-  
-  .icon {
-    font-size: 20px;
-    color: rgba(0, 0, 0, 0.6);
-    text-decoration: none;
-    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
-    display: flex;
-    align-items: center; /* Ensure icons are centered */
-  }
-  
-  .icon:hover {
-    color: #d50000;
-    transform: scale(1.1);
-  }
-  
-  .favourites-icon {
-    padding: 5px;
-    border-radius: 50%;
-    transition: background-color 0.3s ease-in-out;
-  }
-  
-  /* .favourites-icon:hover {
-    background-color: rgba(213, 0, 0, 0.1);
-  } */
-  
-  /* Cart Button */
-  .cart-button {
-    background-color: #d50000;
-    color: #fff;
-    padding: 8px 16px;
-    font-weight: bold;
-    font-size: 16px;
-    text-decoration: none;
-    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-    display: flex;
-    align-items: center; /* Center text vertically */
-    border-radius: 4px;
-  }
-  
-  .cart-button:hover {
-    background-color: darkred;
-    transform: scale(1.05);
-  }
-  
-  /* Dropdown Base Styles */
-  .shop-nav-dropdown,
-  .families-dropdown,
-  .teamwear-dropdown,
-  .athletes-dropdown {
-    position: relative;
-    display: flex;
-    align-items: center; /* Ensure dropdown buttons align with other links */
-  }
-  
-  /* Dropdown Menus */
-  .shop-nav-menu,
-  .families-menu,
-  .teamwear-menu,
-  .athletes-menu {
-    display: none;
-    position: fixed;
-    left: 0;
-    top: 70px; /* Match navbar height */
-    width: 100vw;
-    background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    z-index: 99;
-    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-    opacity: 0;
-    visibility: hidden;
-  }
-  
-  /* Show Dropdown on Hover */
-  .shop-nav-dropdown:hover .shop-nav-menu,
-  .families-dropdown:hover .families-menu,
-  .teamwear-dropdown:hover .teamwear-menu,
-  .athletes-dropdown:hover .athletes-menu {
-    display: block;
-    opacity: 1;
-    visibility: visible;
-  }
-  
-  /* Dropdown Containers */
-  .shop-nav-container,
-  .families-container,
-  .teamwear-container,
-  .athletes-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
-    align-items: flex-start; /* Align dropdown items at the top */
-  }
-  
-  /* Category Styles */
-  .shop-category,
-  .family-item,
-  .teamwear-category,
-  .athlete-category {
-    text-align: center;
-    min-width: 150px;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center content horizontally */
-  }
-  
-  /* Category Links */
-  .shop-category-link,
-  .family-link,
-  .teamwear-category-link,
-  .athlete-category-link {
-    font-weight: bold;
-    color: #000;
-    text-decoration: none;
-    display: block;
-    padding: 10px;
-    transition: color 0.3s ease-in-out;
-  }
-  
-  .shop-category-link:hover,
-  .family-link:hover,
-  .teamwear-category-link:hover,
-  .athlete-category-link:hover {
-    color: #d50000;
-  }
-  
-  /* Subcategory Styles */
-  .shop-subcategory,
-  .family-types,
-  .teamwear-subcategories,
-  .athlete-subcategories {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 10px 0;
-    width: 100%; /* Ensure subcategories take full width of parent */
-  }
-  
-  /* Subcategory Links */
-  .shop-sub-link,
-  .family-type-link,
-  .teamwear-sub-link,
-  .athlete-sub-link {
-    color: #555;
-    text-decoration: none;
-    padding: 8px 10px;
-    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
-    text-align: center;
-  }
-  
-  .shop-sub-link:hover,
-  .family-type-link:hover,
-  .teamwear-sub-link:hover,
-  .athlete-sub-link:hover {
-    color: #d50000;
-    font-weight: bold;
-    background-color: rgba(213, 0, 0, 0.05);
-  }
-  
-  /* Family Images */
-  .family-item img {
-    width: 150px;
-    height: 100px;
-    object-fit: cover;
-    margin: 10px 0;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 992px) {
-    .navbar {
-      padding: 10px 15px;
-      height: 60px; /* Slightly smaller height for mobile */
-    }
-  
-    .menu-toggle {
-      display: flex;
-      align-items: center;
-    }
-  
-    .navbar-links {
-      display: none;
-      flex-direction: column;
-      position: fixed;
-      top: 60px;
-      left: 0;
-      width: 100vw;
-      background-color: #fff;
-      padding: 20px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      z-index: 99;
-      align-items: center; /* Center links vertically */
-    }
-  
-    .navbar-links.active {
-      display: flex;
-      animation: slideDown 0.3s ease-in-out;
-    }
-  
-    .navbar-icons {
-      gap: 10px;
-    }
-  
-    /* Dropdown Menus on Mobile */
-    .shop-nav-menu,
-    .families-menu,
-    .teamwear-menu,
-    .athletes-menu {
-      position: static;
-      width: 100%;
-      box-shadow: none;
-      padding: 10px;
-    }
-  
-    .shop-nav-container,
-    .families-container,
-    .teamwear-container,
-    .athletes-container {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .shop-nav-dropdown:hover .shop-nav-menu,
-    .families-dropdown:hover .families-menu,
-    .teamwear-dropdown:hover .teamwear-menu,
-    .athletes-dropdown:hover .athletes-menu {
-      display: none; /* Prevent hover on mobile */
-    }
-  
-    .shop-nav-dropdown.active .shop-nav-menu,
-    .families-dropdown.active .families-menu,
-    .teamwear-dropdown.active .teamwear-menu,
-    .athletes-dropdown.active .athletes-menu {
-      display: block;
-    }
-  
-    .main-link {
-      font-size: 16px;
-      padding: 8px 12px;
-    }
-  }
-  
-  @media (max-width: 600px) {
-    .navbar {
-      padding: 8px 10px;
-      height: 55px;
-    }
-  
-    .navbar-logo img {
-      height: 40px; /* Smaller logo for mobile */
-    }
-  
-    .menu-toggle {
-      font-size: 20px;
-    }
-  
-    .main-link {
-      font-size: 14px;
-      padding: 6px 10px;
-    }
-  
-    .icon {
-      font-size: 18px;
-    }
-  
-    .cart-button {
-      padding: 6px 12px;
-      font-size: 14px;
-    }
-  
-    .shop-category,
-    .family-item,
-    .teamwear-category,
-    .athlete-category {
-      min-width: 100%;
-    }
-  
-    .family-item img {
-      width: 120px;
-      height: 80px;
-    }
-  }
-  
-  /* Slide Down Animation */
-  @keyframes slideDown {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  overflow-x: hidden; /* Prevent horizontal scrollbar */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-  /* Base Header Styles */
+/* General Navbar Styles */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
-  background: white;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  position: relative;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
   z-index: 1000;
+  width: 100vw;
+  max-width: 100%;
+  height: 70px;
+}
+
+/* Logo */
+.navbar-logo {
+  display: flex;
+  align-items: center;
 }
 
 .navbar-logo img {
-  height: 40px;
-  max-width: 120px;
+  height: 50px;
+  max-width: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease-in-out;
 }
 
+.navbar-logo img:hover {
+  transform: scale(1.1);
+}
+
+/* Toggle Button (for mobile) */
 .menu-toggle {
   display: none;
+  font-size: 24px;
   background: none;
   border: none;
-  font-size: 1.5rem;
   cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  align-self: center;
   color: #333;
-  z-index: 1001;
 }
 
+.menu-toggle:hover {
+  transform: scale(1.1);
+}
+
+/* Navigation Links */
 .navbar-links {
   display: flex;
-  gap: 1.5rem;
-  margin-left: 100px;
+  align-items: center;
+  gap: 20px;
+  padding: 0 20px;
 }
 
+/* Main Navigation Links */
+.main-link {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 18px;
+  padding: 10px 15px;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+}
+
+.main-link:hover {
+  background-color: #000;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* Icons and Login Section */
 .navbar-icons {
   display: flex;
   align-items: center;
-  gap: 1rem;
-
+  gap: 15px;
 }
 
 .icon {
- color: #d50000;
-  font-size: 1.1rem;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.6);
   text-decoration: none;
-  padding: 0.5rem;
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
 }
 
+.icon:hover {
+  color: #d50000;
+  transform: scale(1.1);
+}
+
+.favourites-icon {
+  position: relative;
+  padding: 5px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.favorites-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #d50000;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 12px;
+  padding: 2px 6px;
+}
+
+/* Cart Button */
+.cart-button {
+  background-color: #d50000;
+  color: #fff;
+  padding: 8px 16px;
+  font-weight: bold;
+  font-size: 16px;
+  text-decoration: none;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+.cart-button:hover {
+  background-color: darkred;
+  transform: scale(1.05);
+}
+
+/* Dropdown Base Styles */
+.shop-nav-dropdown,
+.families-dropdown,
+.teamwear-dropdown,
+.athletes-dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Dropdown Menus */
+.shop-nav-menu,
+.families-menu,
+.teamwear-menu,
+.athletes-menu {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 70px;
+  width: 100vw;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  z-index: 99;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Show Dropdown on Hover */
+.shop-nav-dropdown:hover .shop-nav-menu,
+.families-dropdown:hover .families-menu,
+.teamwear-dropdown:hover .teamwear-menu,
+.athletes-dropdown:hover .athletes-menu {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Dropdown Containers */
+.shop-nav-container,
+.families-container,
+.teamwear-container,
+.athletes-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+/* Category Styles */
+.shop-category,
+.family-item,
+.teamwear-category,
+.athlete-category {
+  text-align: center;
+  min-width: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Category Links */
+.shop-category-link,
+.family-link,
+.teamwear-category-link,
+.athlete-category-link {
+  font-weight: bold;
+  color: #000;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  transition: color 0.3s ease-in-out;
+}
+
+.shop-category-link:hover,
+.family-link:hover,
+.teamwear-category-link:hover,
+.athlete-category-link:hover {
+  color: #d50000;
+}
+
+/* Subcategory Styles */
+.shop-subcategory,
+.family-types,
+.teamwear-subcategories,
+.athlete-subcategories {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 0;
+  width: 100%;
+}
+
+/* Subcategory Links */
+.shop-sub-link,
+.family-type-link,
+.teamwear-sub-link,
+.athlete-sub-link {
+  color: #555;
+  text-decoration: none;
+  padding: 8px 10px;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  text-align: center;
+}
+
+.shop-sub-link:hover,
+.family-type-link:hover,
+.teamwear-sub-link:hover,
+.athlete-sub-link:hover {
+  color: #d50000;
+  font-weight: bold;
+  background-color: rgba(213, 0, 0, 0.05);
+}
+
+/* Family Images */
+.family-item img {
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+  margin: 10px 0;
+}
+
+/* Search Input */
+.search-input-container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.search-input {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.search-button {
+  padding: 8px 12px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.search-button:hover {
+  background-color: #333;
+}
+
+/* Login Button */
 .login-button {
   background: none;
   padding: 0.5rem 1rem;
@@ -468,304 +316,7 @@
   border-color: #999;
 }
 
-.cart-button {
-  padding: 0.5rem 1rem;
-
-  color: white;
-  border-radius: 4px;
-  font-size: 0.9rem;
-  white-space: nowrap;
-  background-color: #d50000;
-}
-
-/* Dropdown Menu Styles */
-/* Add your existing dropdown styles here */
-
-/* Auth Modal Styles */
-.auth-modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 2000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-  animation: fadeIn 0.2s ease-out;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-.auth-modal {
-  background: white;
-  width: 100%;
-  max-width: 400px;
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  position: relative;
-  max-height: 90vh;
-  overflow-y: auto;
-  animation: slideIn 0.3s ease-out;
-}
-
-@keyframes slideIn {
-  from { transform: translateY(-20px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-
-.close-modal {
-  position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: #666;
-}
-
-.auth-form {
-  padding: 0.5rem;
-}
-
-.auth-form h1 {
-  font-size: 1.5rem;
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-.form-group {
-  margin-bottom: 1rem;
-}
-
-.form-group input {
-  width: 100%;
-  padding: 0.75rem;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  outline: none;
-}
-
-.form-group input:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 0 2px rgba(0,123,255,0.2);
-}
-
-.forgot-password {
-  display: inline-block;
-  margin-top: 0.5rem;
-  font-size: 0.85rem;
-  color: #007bff;
-  text-decoration: none;
-}
-
-.forgot-password:hover {
-  text-decoration: underline;
-}
-
-.submit-btn {
-  padding: 0.75rem;
-  font-size: 1rem;
-  /* background-color: #000; */
-  background-color: #d50000;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  width: 100%;
-  cursor: pointer;
-  transition: background 0.3s ease;
-  margin-top: -100px;
-}
-
-.submit-btn:hover {
-  background-color: #333;
-}
-
-/* Enhanced Mobile Responsiveness */
-@media (max-width: 992px) {
-  .navbar {
-    flex-wrap: wrap;
-    padding: 0.75rem;
-  }
-
-  .navbar-logo img {
-    height: 35px;
-  }
-
-  .navbar-icons {
-    gap: 0.75rem;
-  }
-
-  .cart-button {
-    padding: 0.5rem 0.75rem;
-    font-size: 0.8rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-    order: 1;
-  }
-
-  .navbar-logo {
-    order: 0;
-    flex: 1;
-  }
-
-  .navbar-icons {
-    order: 2;
-  }
-
-  .navbar-links {
-    position: fixed;
-    top: 60px;
-    left: 0;
-    right: 0;
-    background: white;
-    flex-direction: column;
-    padding: 1rem;
-    gap: 0;
-    display: none;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 999;
-    max-height: calc(100vh - 60px);
-    overflow-y: auto;
-  }
-
-  .navbar-links.active {
-    display: flex;
-  }
-
-  /* Adjust dropdowns for mobile */
-  .shop-nav-dropdown,
-  .families-dropdown,
-  .teamwear-dropdown,
-  .athletes-dropdown {
-    width: 100%;
-  }
-
-  .auth-modal {
-    padding: 1rem;
-  }
-
-  .auth-form h1 {
-    font-size: 1.3rem;
-  }
-
-  .form-group input {
-    padding: 0.6rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .navbar {
-    padding: 0.5rem;
-  }
-
-  .navbar-logo img {
-    height: 30px;
-  }
-
-  .icon {
-    font-size: 1rem;
-    padding: 0.3rem;
-  }
-
-  .cart-button {
-    padding: 0.4rem 0.6rem;
-    font-size: 0.75rem;
-  }
-
-  .auth-modal {
-    padding: 0.75rem;
-  }
-
-  .auth-form h1 {
-    font-size: 1.2rem;
-  }
-
-  .form-description,
-  .auth-prompt {
-    font-size: 0.8rem;
-  }
-
-  .submit-btn {
-    padding: 0.6rem;
-  }
-}
-
-/* Touch target sizes for better mobile UX */
-button,
-a,
-input[type="submit"],
-input[type="button"] {
-  min-height: 44px;
-  min-width: 44px;
-}
-
-/* Prevent zooming on input focus on mobile */
-@media screen and (max-width: 768px) {
-  input,
-  select,
-  textarea {
-    font-size: 16px;
-  }
-}
-
-
-
-
-
-.auth-toggle-btn{
-  border: none;
-  background-color: none;
-  cursor: pointer;
-  color: #007bff;
-  text-decoration: none;
-  background-color:transparent;
-  font-weight: 600;
-  font-size: 14px;
-  
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* Cart Popup */
 .cart-popup {
   position: fixed;
   top: 0;
@@ -777,7 +328,6 @@ input[type="button"] {
   z-index: 1000;
   display: flex;
   animation: slideIn 0.4s ease-out;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   border-radius: 12px 0 0 12px;
   overflow: hidden;
 }
@@ -879,7 +429,7 @@ input[type="button"] {
   font-weight: 500;
   transition: all 0.3s ease;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-  min-height: 44px; /* Touch-friendly target */
+  min-height: 44px;
 }
 
 .add-to-cart-btn:hover {
@@ -925,7 +475,7 @@ input[type="button"] {
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.2s ease;
-  min-height: 44px; /* Touch-friendly target */
+  min-height: 44px;
   min-width: 44px;
 }
 
@@ -949,7 +499,7 @@ input[type="button"] {
   padding: 6px;
   font-size: 1rem;
   transition: color 0.2s ease;
-  min-height: 44px; /* Touch-friendly target */
+  min-height: 44px;
   min-width: 44px;
 }
 
@@ -983,7 +533,7 @@ input[type="button"] {
   font-weight: 500;
   transition: all 0.3s ease;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
-  min-height: 44px; /* Touch-friendly target */
+  min-height: 44px;
 }
 
 .checkout-btn:hover {
@@ -996,19 +546,278 @@ input[type="button"] {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
+.close-cart-popup {
+  position: absolute;
+  top: -5px;
+  right: 2px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #222;
+  cursor: pointer;
+  padding: 8px;
+  min-height: 44px;
+  min-width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease-in-out;
+}
+
+.close-cart-popup:hover {
+  color: #e63946;
+}
+
+/* Auth Modal Styles */
+.auth-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.auth-modal {
+  background: white;
+  width: 100%;
+  max-width: 400px;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.close-modal {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #666;
+}
+
+.auth-form {
+  padding: 0.5rem;
+}
+
+.auth-form h1 {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.form-group input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0,123,255,0.2);
+}
+
+.forgot-password {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+.submit-btn {
+  padding: 0.75rem;
+  font-size: 1rem;
+  background-color: #d50000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  width: 100%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #333;
+}
+
+.auth-toggle-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.gdpr-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.gdpr-consent input {
+  margin-top: 3px;
+}
+
+.gdpr-consent label {
+  font-size: 0.85rem;
+  color: #333;
+}
+
 /* Responsive Design */
 @media (max-width: 992px) {
+  .navbar {
+    padding: 10px 15px;
+    height: 60px;
+  }
+
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-logo {
+    display: none; /* Hide logo on mobile */
+  }
+
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100vw;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 99;
+    align-items: center;
+    max-height: calc(100vh - 60px);
+    overflow-y: auto;
+  }
+
+  .navbar-links.active {
+    display: flex;
+    animation: slideDown 0.3s ease-in-out;
+  }
+
+  .navbar-icons {
+    gap: 10px;
+  }
+
+  /* Dropdown Menus on Mobile */
+  .shop-nav-menu,
+  .families-menu,
+  .teamwear-menu,
+  .athletes-menu {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+    padding: 10px;
+  }
+
+  .shop-nav-container,
+  .families-container,
+  .teamwear-container,
+  .athletes-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .shop-nav-dropdown:hover .shop-nav-menu,
+  .families-dropdown:hover .families-menu,
+  .teamwear-dropdown:hover .teamwear-menu,
+  .athletes-dropdown:hover .athletes-menu {
+    display: none; /* Prevent hover on mobile */
+  }
+
+  .shop-nav-dropdown.active .shop-nav-menu,
+  .families-dropdown.active .families-menu,
+  .teamwear-dropdown.active .teamwear-menu,
+  .athletes-dropdown.active .athletes-menu {
+    display: block;
+  }
+
+  .main-link {
+    font-size: 16px;
+    padding: 8px 12px;
+  }
+
+  .search-input {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .search-button {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .auth-modal {
+    padding: 1rem;
+  }
+
+  .auth-form h1 {
+    font-size: 1.3rem;
+  }
+
+  .form-group input {
+    padding: 0.6rem;
+  }
+
   .cart-popup {
-    width: 70%; /* Wider to utilize more screen space */
-    border-radius: 8px 0 0 8px; /* Slightly smaller radius */
+    width: 70%;
+    border-radius: 8px 0 0 8px;
   }
 
   .cart-left, .cart-right {
-    padding: 16px; /* Reduced padding for compact layout */
+    padding: 16px;
   }
 
   .cart-left h2, .cart-right h2 {
-    font-size: clamp(1.125rem, 2vw, 1.25rem); /* Smaller headings */
+    font-size: clamp(1.125rem, 2vw, 1.25rem);
     margin-bottom: 16px;
   }
 
@@ -1019,7 +828,7 @@ input[type="button"] {
 
   .must-have-image {
     width: 60px;
-    height: 60px; /* Smaller images for smaller screens */
+    height: 60px;
   }
 
   .must-have-details h3 {
@@ -1073,14 +882,79 @@ input[type="button"] {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
+  .navbar {
+    padding: 8px 10px;
+    height: 55px;
+  }
+
+  .menu-toggle {
+    font-size: 20px;
+  }
+
+  .main-link {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+
+  .icon {
+    font-size: 18px;
+  }
+
+  .cart-button {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  .shop-category,
+  .family-item,
+  .teamwear-category,
+  .athlete-category {
+    min-width: 100%;
+  }
+
+  .family-item img {
+    width: 120px;
+    height: 80px;
+  }
+
+  .search-input-container {
+    flex-direction: column;
+  }
+
+  .search-input,
+  .search-button {
+    width: 100%;
+  }
+
+  .search-button {
+    margin-top: 8px;
+  }
+
+  .auth-modal {
+    padding: 0.75rem;
+  }
+
+  .auth-form h1 {
+    font-size: 1.2rem;
+  }
+
+  .form-description,
+  .auth-prompt {
+    font-size: 0.8rem;
+  }
+
+  .submit-btn {
+    padding: 0.6rem;
+  }
+
   .cart-popup {
-    width: 100%; /* Full width for smaller screens */
-    border-radius: 0; /* Remove border radius for edge-to-edge */
+    width: 100%;
+    border-radius: 0;
   }
 
   .cart-left, .cart-right {
-    width: 100%; /* Stack sections vertically */
+    width: 100%;
     border-right: none;
     border-bottom: 1px solid #e5e5e5;
   }
@@ -1110,7 +984,7 @@ input[type="button"] {
   }
 
   .add-to-cart-btn {
-    width: 100%; /* Full-width button */
+    width: 100%;
     justify-content: center;
   }
 
@@ -1121,24 +995,10 @@ input[type="button"] {
   .quantity-controls {
     justify-content: space-between;
   }
-}
-
-@media (max-width: 480px) {
-  .cart-popup {
-    width: 100%;
-  }
-
-  .cart-left, .cart-right {
-    padding: 12px;
-  }
 
   .cart-left h2, .cart-right h2 {
     font-size: clamp(1rem, 2vw, 1.125rem);
     margin-bottom: 12px;
-  }
-
-  .must-have-item {
-    padding: 6px;
   }
 
   .must-have-details h3 {
@@ -1170,18 +1030,31 @@ input[type="button"] {
     padding: 8px 16px;
     font-size: clamp(0.75rem, 2.5vw, 0.875rem);
   }
+
+  .favorites-count {
+    top: 0;
+  }
+}
+
+/* Slide Down Animation */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Touch target sizes for better mobile UX */
-.add-to-cart-btn,
-.quantity-controls button,
-.remove-item,
-.checkout-btn {
+button,
+a,
+input[type="submit"],
+input[type="button"] {
   min-height: 44px;
   min-width: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 /* Prevent zooming on input focus on mobile */
@@ -1199,122 +1072,84 @@ input[type="button"] {
 
 
 
-
-
-
-
-
-
-/* Existing header.css styles assumed to be unchanged */
-/* Add the following to style the cart popup close button */
-
-.close-cart-popup {
+/* Update the favorite icon button styles */
+.favorite-icon-button {
   position: absolute;
-  top: -5px;
-  right: 2px;
-  background: none;
+  top: 8px;
+  right: 8px;
+  background: rgba(255, 255, 255, 0.8);
   border: none;
-  font-size: 1.5rem;
-  color: #222;
   cursor: pointer;
-  padding: 8px;
-  min-height: 44px;
-  min-width: 44px;
+  height: 36px;
+  width: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 50%;
+  z-index: 2;
+  padding: 0;
+}
+
+.favorite-icon {
+  font-size: 1.2rem;
+  color: gray;
   transition: color 0.3s ease-in-out;
 }
 
-.close-cart-popup:hover {
+.favorite-icon:hover {
   color: #e63946;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* header.css (add these if not present) */
-.search-input-container {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-}
-
-.search-input {
-  padding: 8px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.search-button {
-  padding: 8px 12px;
+/* Update the add to cart button */
+.add-to-cart-button {
   background-color: #000;
   color: #fff;
   border: none;
-  border-radius: 4px;
+  padding: 10px 14px;
+  margin-top: 10px;
   cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
   display: flex;
   align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background 0.3s ease;
+  margin-bottom: 15px;
+  width: 100%;
+  font-size: 0.9rem;
+  white-space: nowrap;
 }
 
-.search-button:hover {
-  background-color: #333;
+.add-to-cart-button:hover {
+  background-color: #444;
 }
 
-@media (max-width: 768px) {
-  .search-input {
-    font-size: 12px;
-    padding: 6px;
+/* Update media queries for small screens */
+@media (max-width: 576px) {
+  .favorite-icon-button {
+    height: 30px;
+    width: 30px;
   }
-
-  .search-button {
-    padding: 6px 10px;
-    font-size: 12px;
+  
+  .favorite-icon {
+    font-size: 1rem;
+  }
+  
+  .add-to-cart-button {
+    padding: 8px 10px;
+    font-size: 0.8rem;
   }
 }
 
-@media (max-width: 480px) {
-  .search-input-container {
-    flex-direction: column;
+@media (max-width: 400px) {
+  .add-to-cart-button {
+    padding: 6px 8px;
+    font-size: 0.75rem;
   }
-
-  .search-input,
-  .search-button {
-    width: 100%;
-  }
-
-  .search-button {
-    margin-top: 8px;
+  
+  .product-name,
+  .product-price {
+    font-size: 0.75rem;
   }
 }

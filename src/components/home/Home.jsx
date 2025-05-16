@@ -59,6 +59,10 @@ const ProductCard = ({ id, title, price, sizes, images, sizeLabel = "Glove Size"
       {/* Image Gallery */}
       <div className="product-image-container">
         <img src={images[currentImageIndex]} alt={title} className="main-product-image" />
+        {/* Favorite Icon moved to image container */}
+        <button className="favorite-icon-button" onClick={handleAddToFavorites}>
+          <FaHeart className="favorite-icon" />
+        </button>
         <div className="image-thumbnails">
           {images.map((img, index) => (
             <img 
@@ -74,15 +78,7 @@ const ProductCard = ({ id, title, price, sizes, images, sizeLabel = "Glove Size"
 
       {/* Product Details */}
       <div className="product-details">
-        {/* Favorite Icon */}
-        <button className="favorite-icon-button" onClick={handleAddToFavorites}>
-          <FaHeart className="favorite-icon" />
-        </button>
-
-        {/* Product Title */}
         <h2 className="product-title">{title}</h2>
-
-        {/* Size Selection */}
         <div className="size-section">
           <p className="size-label">{sizeLabel}:</p>
           <div className="size-options">
@@ -98,14 +94,8 @@ const ProductCard = ({ id, title, price, sizes, images, sizeLabel = "Glove Size"
           </div>
           <p className="size-guide">Size Guide</p>
         </div>
-
-        {/* Divider */}
         <div className="divider"></div>
-
-        {/* Price */}
         <p className="product-price">{price}</p>
-
-        {/* Quantity and Add to Cart */}
         <div className="quantity-cart-section">
           <div className="quantity-selector">
             <button 

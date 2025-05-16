@@ -46,45 +46,41 @@ const ShopTheLook = () => {
       price: parseFloat(product.price.replace('$', '')),
       image: product.image,
     });
-    // navigate("/cart"); // Redirect to cart
   };
 
   return (
-    <div className="shop-the-look">
+    <div className="stl-container">
       {/* Left Section */}
-      <div className="left-section">
-        <h2 className="section-title">Shop the Look</h2>
+      <div className="stl-left-section">
+        <h2 className="stl-section-title">Shop the Look</h2>
 
-        <div className="text-nav-container">
-          <p className="description">Gray-Nicolls and Pakistan star Babar Azam!</p>
-          <div className="nav-buttons">
-            <button onClick={() => scroll("left")} className="scroll-btn">{"<"}</button>
-            <button onClick={() => scroll("right")} className="scroll-btn">{">"}</button>
+        <div className="stl-text-nav-container">
+          <p className="stl-description">Gray-Nicolls and Pakistan star Babar Azam!</p>
+          <div className="stl-nav-buttons">
+            <button onClick={() => scroll("left")} className="stl-scroll-btn">{"<"}</button>
+            <button onClick={() => scroll("right")} className="stl-scroll-btn">{">"}</button>
           </div>
         </div>
 
         {/* Product Scroll Area */}
-        <div className="product-container-wrapper">
-          <div className="product-container" ref={scrollRef}>
+        <div className="stl-product-scroll-wrapper">
+          <div className="stl-product-scroll-container" ref={scrollRef}>
             {products.map((item) => (
-              <div className="product-item" key={item.id}>
-                <img src={item.image} alt={item.name} className="product-image" />
-
-                {/* Favorite Button */}
+              <div className="stl-product-card" key={item.id}>
+                <div className="stl-product-img-container">
+                  <img src={item.image} alt={item.name} className="stl-product-img" />
+                  <button
+                    className="stl-fav-btn"
+                    onClick={() => handleAddToFavorites(item)}
+                    aria-label={`Add ${item.name} to favorites`}
+                  >
+                    <FaHeart className="stl-fav-icon" />
+                  </button>
+                </div>
+                <p className="stl-product-name">{item.name}</p>
+                <p className="stl-product-price">{item.price}</p>
                 <button
-                  className="favorite-icon-button"
-                  onClick={() => handleAddToFavorites(item)}
-                  aria-label={`Add ${item.name} to favorites`}
-                >
-                  <FaHeart className="favorite-icon" />
-                </button>
-
-                <p className="product-name">{item.name}</p>
-                <p className="product-price">{item.price}</p>
-
-                {/* Add to Cart Button */}
-                <button
-                  className="add-to-cart-button"
+                  className="stl-add-to-cart-btn"
                   onClick={() => handleAddToCart(item)}
                 >
                   <FaShoppingCart /> Add to Cart
@@ -96,10 +92,10 @@ const ShopTheLook = () => {
       </div>
 
       {/* Right Section */}
-      <div className="right-section">
-        <div className="image-wrapper">
-          <img src={mainImage} alt="Look Image" className="main-image" />
-          <div className="name-overlay">Babar Azam Look</div>
+      <div className="stl-right-section">
+        <div className="stl-main-img-wrapper">
+          <img src={mainImage} alt="Look Image" className="stl-main-img" />
+          <div className="stl-name-overlay">Babar Azam Look</div>
         </div>
       </div>
     </div>

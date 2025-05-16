@@ -1,13 +1,15 @@
+/* Ollie Section - Hero Banner */
 .ollie-section {
-  width: 95%; /* Margin from left & right */
-  margin: 50px auto; /* Centers section */
+  width: 95%;
+  margin: 50px auto;
   height: 640px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  overflow: hidden; /* Prevents image overflow */
+  overflow: hidden;
   margin-top: 60px;
+  border-radius: 8px;
 }
 
 .ollie-section::before {
@@ -19,11 +21,12 @@
   height: 100%;
   background: url("../../assets/ollie.webp") center/cover no-repeat;
   transition: transform 0.5s ease-in-out;
-  filter: brightness(50%); /* Darkens the image */
+  filter: brightness(50%);
+  z-index: 1;
 }
 
 .ollie-section:hover::before {
-  transform: scale(1.1); /* Zooms in the background inside */
+  transform: scale(1.05);
 }
 
 .ollie-content {
@@ -31,6 +34,9 @@
   text-align: center;
   padding: 20px 40px;
   border-radius: 5px;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .ollie-title {
@@ -38,6 +44,8 @@
   font-weight: 500;
   color: white;
   margin-bottom: 20px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  line-height: 1.3;
 }
 
 .ollie-shop-btn {
@@ -48,10 +56,129 @@
   color: white;
   text-decoration: none;
   border-radius: 5px;
-  transition: background 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   background-color: red;
+  border: 2px solid transparent;
+  min-width: 180px;
 }
 
 .ollie-shop-btn:hover {
-  background: #333;
+  background: #c00;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+  .ollie-section {
+    height: 560px;
+    width: 93%;
+  }
+  
+  .ollie-title {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .ollie-section {
+    height: 480px;
+    margin-top: 40px;
+    width: 92%;
+  }
+  
+  .ollie-title {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+  
+  .ollie-shop-btn {
+    padding: 10px 20px;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .ollie-section {
+    height: 400px;
+    width: 90%;
+    margin: 30px auto;
+  }
+  
+  .ollie-content {
+    padding: 20px 30px;
+  }
+  
+  .ollie-title {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+  }
+  
+  .ollie-shop-btn {
+    padding: 10px 18px;
+    font-size: 1rem;
+    min-width: 160px;
+  }
+}
+
+@media (max-width: 576px) {
+  .ollie-section {
+    height: 350px;
+    width: 88%;
+    margin: 25px auto;
+  }
+  
+  .ollie-title {
+    font-size: 1.5rem;
+  }
+  
+  .ollie-shop-btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    min-width: 140px;
+  }
+}
+
+@media (max-width: 400px) {
+  .ollie-section {
+    height: 300px;
+    width: 86%;
+    margin: 20px auto;
+  }
+  
+  .ollie-content {
+    padding: 15px 20px;
+  }
+  
+  .ollie-title {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+  
+  .ollie-shop-btn {
+    padding: 8px 14px;
+    min-width: 120px;
+  }
+}
+
+/* Very small devices (e.g., iPhone 5/SE) */
+@media (max-width: 320px) {
+  .ollie-section {
+    height: 250px;
+    width: 84%;
+    margin: 15px auto;
+  }
+  
+  .ollie-content {
+    padding: 10px 15px;
+  }
+  
+  .ollie-title {
+    font-size: 1.1rem;
+  }
+  
+  .ollie-shop-btn {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
 }

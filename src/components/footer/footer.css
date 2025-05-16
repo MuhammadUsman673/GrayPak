@@ -1,3 +1,4 @@
+/* Footer Styles */
 .footer {
     background: black;
     color: white;
@@ -9,12 +10,14 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    gap: 30px;
 }
 
 /* Left Side: My Account & Gray-Nicolls */
 .footer-links {
     display: flex;
     gap: 80px;
+    flex-wrap: wrap;
 }
 
 .footer-column h3 {
@@ -54,6 +57,7 @@
 /* Right Side: Newsletter */
 .newsletter-section {
     max-width: 400px;
+    width: 100%;
 }
 
 .newsletter-section h3 {
@@ -70,10 +74,12 @@
     display: flex;
     gap: 10px;
     margin-bottom: 20px;
+    flex-wrap: wrap;
 }
 
 .newsletter-input input {
     flex: 1;
+    min-width: 200px;
     padding: 10px;
     border: none;
     border-bottom: 2px solid white;
@@ -91,9 +97,10 @@
     background: red;
     color: white;
     border: none;
-    padding: 18px 35px;
+    padding: 10px 20px;
     cursor: pointer;
     font-weight: bold;
+    white-space: nowrap;
 }
 
 .newsletter-input button:hover {
@@ -134,6 +141,7 @@
     display: flex;
     gap: 15px;
     font-size: 1.2rem;
+    flex-wrap: wrap;
 }
 
 .social-icons a {
@@ -160,6 +168,68 @@
 /* Bottom: Copyright */
 .footer-bottom {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 40px;
     font-size: 0.9rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .footer-links {
+        gap: 50px;
+    }
+    
+    .newsletter-section {
+        max-width: 100%;
+    }
+    
+    .footer-container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 40px 5%;
+    }
+    
+    .footer-links {
+        gap: 40px;
+    }
+    
+    .newsletter-input button {
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-links {
+        gap: 30px;
+        flex-direction: column;
+    }
+    
+    .newsletter-input input {
+        min-width: 100%;
+    }
+    
+    .newsletter-input button {
+        width: 100%;
+    }
+    
+    .footer-bottom {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 400px) {
+    .footer {
+        padding: 30px 4%;
+    }
+    
+    .social-icons {
+        justify-content: center;
+    }
+    
+    .newsletter-section h3 {
+        font-size: 1.1rem;
+    }
 }

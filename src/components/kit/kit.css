@@ -1,12 +1,14 @@
+/* Revo Pro Section - Product Banner */
 .revo-pro-container {
-    width: 95%; /* Margin from left & right */
-    margin: 50px auto; /* Centers section */
+    width: 95%;
+    margin: 50px auto;
     height: 550px;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    overflow: hidden; /* Prevents image overflow */
+    overflow: hidden;
+    border-radius: 8px;
 }
 
 .revo-pro-container::before {
@@ -18,10 +20,11 @@
     height: 100%;
     background: url("../../assets/kit.webp") center/cover no-repeat;
     transition: transform 0.5s ease-in-out;
+    z-index: 1;
 }
 
 .revo-pro-container:hover::before {
-    transform: scale(1.1); /* Zooms in the background */
+    transform: scale(1.05); /* Matches hover zoom */
 }
 
 .revo-pro-content {
@@ -29,13 +32,19 @@
     text-align: center;
     padding: 20px 40px;
     border-radius: 5px;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .revo-pro-title {
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: bold;
     color: white;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    line-height: 1.2;
 }
 
 .revo-pro-shop-btn {
@@ -46,9 +55,129 @@
     color: white;
     text-decoration: none;
     border-radius: 5px;
-    transition: background 0.3s ease-in-out;
+    background: red;
+    transition: all 0.3s ease-in-out;
+    min-width: 200px;
+    border: 2px solid transparent;
 }
 
 .revo-pro-shop-btn:hover {
-    background: #333;
+    background-color: black;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
+
+/* Responsive Breakpoints */
+@media (max-width: 1200px) {
+    .revo-pro-container {
+        height: 500px;
+        width: 93%;
+    }
+
+    .revo-pro-title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .revo-pro-container {
+        height: 450px;
+        width: 92%;
+        margin-top: 40px;
+    }
+
+    .revo-pro-title {
+        font-size: 2.2rem;
+        margin-bottom: 12px;
+    }
+
+    .revo-pro-shop-btn {
+        padding: 10px 20px;
+        font-size: 1.1rem;
+        min-width: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    .revo-pro-container {
+        height: 400px;
+        width: 90%;
+        margin: 30px auto;
+    }
+
+    .revo-pro-content {
+        padding: 20px 30px;
+    }
+
+    .revo-pro-title {
+        font-size: 2rem;
+        letter-spacing: 0.5px;
+    }
+
+    .revo-pro-shop-btn {
+        padding: 10px 18px;
+        font-size: 1rem;
+        min-width: 160px;
+    }
+}
+
+@media (max-width: 576px) {
+    .revo-pro-container {
+        height: 350px;
+        width: 88%;
+        margin: 25px auto;
+    }
+
+    .revo-pro-title {
+        font-size: 1.8rem;
+    }
+
+    .revo-pro-shop-btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+        min-width: 140px;
+    }
+}
+
+@media (max-width: 400px) {
+    .revo-pro-container {
+        height: 300px;
+        width: 86%;
+        margin: 20px auto;
+    }
+
+    .revo-pro-content {
+        padding: 15px 20px;
+    }
+
+    .revo-pro-title {
+        font-size: 1.5rem;
+    }
+
+    .revo-pro-shop-btn {
+        padding: 8px 14px;
+        min-width: 120px;
+    }
+}
+
+@media (max-width: 320px) {
+    .revo-pro-container {
+        height: 250px;
+        width: 84%;
+        margin: 15px auto;
+    }
+
+    .revo-pro-content {
+        padding: 10px 15px;
+    }
+
+    .revo-pro-title {
+        font-size: 1.3rem;
+    }
+
+    .revo-pro-shop-btn {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+}
+    

@@ -1,3 +1,4 @@
+/* Revo Section - Hero Banner */
 .revo-wrapper {
     width: 95%;
     margin: 50px auto;
@@ -7,6 +8,7 @@
     justify-content: center;
     position: relative;
     overflow: hidden;
+    border-radius: 8px;
 }
 
 .revo-wrapper::before {
@@ -18,11 +20,11 @@
     height: 100%;
     background: url("../../assets/ncore.webp") center/cover no-repeat;
     transition: transform 0.5s ease-in-out;
-
+    z-index: 1;
 }
 
 .revo-wrapper:hover::before {
-    transform: scale(1.1);
+    transform: scale(1.05); /* Reduced from 1.1 for better mobile performance */
 }
 
 .revo-content-box {
@@ -30,6 +32,9 @@
     text-align: center;
     padding: 20px 40px;
     border-radius: 5px;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .revo-waitlist-text {
@@ -38,11 +43,11 @@
     color: white;
     margin-bottom: 5px;
     text-transform: uppercase;
-    /* background: rgba(255, 255, 255, 0.2); */
-    
     border-radius: 5px;
     display: inline-block;
     letter-spacing: 1px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    line-height: 1.2;
 }
 
 .revo-main-title {
@@ -52,6 +57,8 @@
     margin-bottom: 10px;
     letter-spacing: 1.5px;
     margin-top: 0px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    line-height: 1.1;
 }
 
 .revo-shop-btn {
@@ -62,13 +69,159 @@
     color: white;
     text-decoration: none;
     border-radius: 5px;
-    /* background: rgba(255, 255, 255, 0.2); */
     background: red;
-    transition: background 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     margin-top: 5px;
+    min-width: 200px;
+    border: 2px solid transparent;
 }
 
 .revo-shop-btn:hover {
-    /* background: rgba(255, 255, 255, 0.4); */
     background-color: black;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    .revo-wrapper {
+        height: 500px;
+        width: 93%;
+    }
+    
+    .revo-waitlist-text {
+        font-size: 2.5rem;
+    }
+    
+    .revo-main-title {
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .revo-wrapper {
+        height: 450px;
+        width: 92%;
+        margin-top: 40px;
+    }
+    
+    .revo-waitlist-text {
+        font-size: 2.2rem;
+        margin-bottom: 0px;
+    }
+    
+    .revo-main-title {
+        font-size: 3.5rem;
+        margin-bottom: 8px;
+    }
+    
+    .revo-shop-btn {
+        padding: 10px 20px;
+        font-size: 1.1rem;
+        min-width: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    .revo-wrapper {
+        height: 400px;
+        width: 90%;
+        margin: 30px auto;
+    }
+    
+    .revo-content-box {
+        padding: 20px 30px;
+    }
+    
+    .revo-waitlist-text {
+        font-size: 1.8rem;
+        letter-spacing: 0.5px;
+    }
+    
+    .revo-main-title {
+        font-size: 2.8rem;
+        letter-spacing: 1px;
+    }
+    
+    .revo-shop-btn {
+        padding: 10px 18px;
+        font-size: 1rem;
+        min-width: 160px;
+    }
+}
+
+@media (max-width: 576px) {
+    .revo-wrapper {
+        height: 350px;
+        width: 88%;
+        margin: 25px auto;
+    }
+    
+    .revo-waitlist-text {
+        font-size: 1.5rem;
+    }
+    
+    .revo-main-title {
+        font-size: 2.2rem;
+        margin-bottom: 5px;
+    }
+    
+    .revo-shop-btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+        min-width: 140px;
+        margin-top: 0px;
+    }
+}
+
+@media (max-width: 400px) {
+    .revo-wrapper {
+        height: 300px;
+        width: 86%;
+        margin: 20px auto;
+    }
+    
+    .revo-content-box {
+        padding: 15px 20px;
+    }
+    
+    .revo-waitlist-text {
+        font-size: 1.3rem;
+    }
+    
+    .revo-main-title {
+        font-size: 1.8rem;
+        letter-spacing: 0.5px;
+    }
+    
+    .revo-shop-btn {
+        padding: 8px 14px;
+        min-width: 120px;
+    }
+}
+
+/* Very small devices (e.g., iPhone 5/SE) */
+@media (max-width: 320px) {
+    .revo-wrapper {
+        height: 250px;
+        width: 84%;
+        margin: 15px auto;
+    }
+    
+    .revo-content-box {
+        padding: 10px 15px;
+    }
+    
+    .revo-waitlist-text {
+        font-size: 1.1rem;
+    }
+    
+    .revo-main-title {
+        font-size: 1.5rem;
+    }
+    
+    .revo-shop-btn {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
 }

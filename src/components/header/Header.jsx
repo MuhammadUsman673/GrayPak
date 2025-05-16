@@ -59,11 +59,17 @@ const Header = ({ toggleAuthModal, authModal }) => {
     setCartItems(prev => prev.filter(item => item.id !== id));
   };
 
+  const handleNavLinkClick = () => {
+    if (menuOpen) {
+      setMenuOpen(false);
+    }
+  };
+
   const totalPrice = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0).toFixed(2);
 
   return (
     <nav className="navbar">
-      <Link to="/" className="navbar-logo">
+      <Link to="/" className="navbar-logo" onClick={handleNavLinkClick}>
         <img src={logo} alt="Website Logo" />
       </Link>
 
@@ -73,71 +79,71 @@ const Header = ({ toggleAuthModal, authModal }) => {
 
       <div className={`navbar-links ${menuOpen ? 'active' : ''}`}>
         <div className="shop-nav-dropdown">
-          <Link to="/shop" className="shop-nav-btn main-link">Shop</Link>
+          <Link to="/shop" className="shop-nav-btn main-link" onClick={handleNavLinkClick}>Shop</Link>
           <div className="shop-nav-menu">
             <div className="shop-nav-container">
               <div className="shop-category">
-                <Link to="/shop/cricket-bats" className="shop-category-link">Cricket Bats</Link>
+                <Link to="/shop/cricket-bats" className="shop-category-link" onClick={handleNavLinkClick}>Cricket Bats</Link>
                 <div className="shop-subcategory">
-                  <Link to="/shop/cricket-bats/neocore" className="shop-sub-link">Neocore</Link>
-                  <Link to="/shop/cricket-bats/ventus" className="shop-sub-link">Ventus</Link>
-                  <Link to="/shop/cricket-bats/phantom" className="shop-sub-link">Phantom</Link>
+                  <Link to="/shop/cricket-bats/neocore" className="shop-sub-link" onClick={handleNavLinkClick}>Neocore</Link>
+                  <Link to="/shop/cricket-bats/ventus" className="shop-sub-link" onClick={handleNavLinkClick}>Ventus</Link>
+                  <Link to="/shop/cricket-bats/phantom" className="shop-sub-link" onClick={handleNavLinkClick}>Phantom</Link>
                 </div>
               </div>
               <div className="shop-category">
-                <Link to="/shop/batting-gloves" className="shop-category-link">Batting Gloves</Link>
+                <Link to="/shop/batting-gloves" className="shop-category-link" onClick={handleNavLinkClick}>Batting Gloves</Link>
                 <div className="shop-subcategory">
-                  <Link to="/shop/batting-gloves/protect" className="shop-sub-link">Protect</Link>
-                  <Link to="/shop/batting-gloves/elite" className="shop-sub-link">Elite</Link>
-                  <Link to="/shop/batting-gloves/stealth" className="shop-sub-link">Stealth</Link>
+                  <Link to="/shop/batting-gloves/protect" className="shop-sub-link" onClick={handleNavLinkClick}>Protect</Link>
+                  <Link to="/shop/batting-gloves/elite" className="shop-sub-link" onClick={handleNavLinkClick}>Elite</Link>
+                  <Link to="/shop/batting-gloves/stealth" className="shop-sub-link" onClick={handleNavLinkClick}>Stealth</Link>
                 </div>
               </div>
               <div className="shop-category">
-                <Link to="/shop/batting-pads" className="shop-category-link">Batting Pads</Link>
+                <Link to="/shop/batting-pads" className="shop-category-link" onClick={handleNavLinkClick}>Batting Pads</Link>
                 <div className="shop-subcategory">
-                  <Link to="/shop/batting-pads/guardian" className="shop-sub-link">Guardian</Link>
-                  <Link to="/shop/batting-pads/shield" className="shop-sub-link">Shield</Link>
-                  <Link to="/shop/batting-pads/armor" className="shop-sub-link">Armor</Link>
+                  <Link to="/shop/batting-pads/guardian" className="shop-sub-link" onClick={handleNavLinkClick}>Guardian</Link>
+                  <Link to="/shop/batting-pads/shield" className="shop-sub-link" onClick={handleNavLinkClick}>Shield</Link>
+                  <Link to="/shop/batting-pads/armor" className="shop-sub-link" onClick={handleNavLinkClick}>Armor</Link>
                 </div>
               </div>
               <div className="shop-category">
-                <Link to="/shop/helmets" className="shop-category-link">Helmets</Link>
+                <Link to="/shop/helmets" className="shop-category-link" onClick={handleNavLinkClick}>Helmets</Link>
                 <div className="shop-subcategory">
-                  <Link to="/shop/helmets/aero" className="shop-sub-link">Aero</Link>
-                  <Link to="/shop/helmets/fortis" className="shop-sub-link">Fortis</Link>
-                  <Link to="/shop/helmets/zenith" className="shop-sub-link">Zenith</Link>
+                  <Link to="/shop/helmets/aero" className="shop-sub-link" onClick={handleNavLinkClick}>Aero</Link>
+                  <Link to="/shop/helmets/fortis" className="shop-sub-link" onClick={handleNavLinkClick}>Fortis</Link>
+                  <Link to="/shop/helmets/zenith" className="shop-sub-link" onClick={handleNavLinkClick}>Zenith</Link>
                 </div>
               </div>
               <div className="shop-category">
-                <Link to="/shop/shoes" className="shop-category-link">Shoes</Link>
+                <Link to="/shop/shoes" className="shop-category-link" onClick={handleNavLinkClick}>Shoes</Link>
                 <div className="shop-subcategory">
-                  <Link to="/shop/shoes/sprint" className="shop-sub-link">Sprint</Link>
-                  <Link to="/shop/shoes/turbo" className="shop-sub-link">Turbo</Link>
-                  <Link to="/shop/shoes/velocity" className="shop-sub-link">Velocity</Link>
+                  <Link to="/shop/shoes/sprint" className="shop-sub-link" onClick={handleNavLinkClick}>Sprint</Link>
+                  <Link to="/shop/shoes/turbo" className="shop-sub-link" onClick={handleNavLinkClick}>Turbo</Link>
+                  <Link to="/shop/shoes/velocity" className="shop-sub-link" onClick={handleNavLinkClick}>Velocity</Link>
                 </div>
               </div>
               <div className="shop-category">
-                <Link to="/shop/wicketkeeping" className="shop-category-link">Wicketkeeping</Link>
+                <Link to="/shop/wicketkeeping" className="shop-category-link" onClick={handleNavLinkClick}>Wicketkeeping</Link>
                 <div className="shop-subcategory">
-                  <Link to="/shop/wicketkeeping/gloves" className="shop-sub-link">Gloves</Link>
-                  <Link to="/shop/wicketkeeping/pads" className="shop-sub-link">Pads</Link>
-                  <Link to="/shop/wicketkeeping/helmets" className="shop-sub-link">Helmets</Link>
+                  <Link to="/shop/wicketkeeping/gloves" className="shop-sub-link" onClick={handleNavLinkClick}>Gloves</Link>
+                  <Link to="/shop/wicketkeeping/pads" className="shop-sub-link" onClick={handleNavLinkClick}>Pads</Link>
+                  <Link to="/shop/wicketkeeping/helmets" className="shop-sub-link" onClick={handleNavLinkClick}>Helmets</Link>
                 </div>
               </div>
               <div className="shop-category">
-                <Link to="/shop/luggage-accessories" className="shop-category-link">Luggage & Accessories</Link>
+                <Link to="/shop/luggage-accessories" className="shop-category-link" onClick={handleNavLinkClick}>Luggage & Accessories</Link>
                 <div className="shop-subcategory">
-                  <Link to="/shop/luggage-accessories/bags" className="shop-sub-link">Bags</Link>
-                  <Link to="/shop/luggage-accessories/kitbags" className="shop-sub-link">Kitbags</Link>
-                  <Link to="/shop/luggage-accessories/accessories" className="shop-sub-link">Accessories</Link>
+                  <Link to="/shop/luggage-accessories/bags" className="shop-sub-link" onClick={handleNavLinkClick}>Bags</Link>
+                  <Link to="/shop/luggage-accessories/kitbags" className="shop-sub-link" onClick={handleNavLinkClick}>Kitbags</Link>
+                  <Link to="/shop/luggage-accessories/accessories" className="shop-sub-link" onClick={handleNavLinkClick}>Accessories</Link>
                 </div>
               </div>
               <div className="shop-category">
-                <Link to="/shop/clothing" className="shop-category-link">Clothing</Link>
+                <Link to="/shop/clothing" className="shop-category-link" onClick={handleNavLinkClick}>Clothing</Link>
                 <div className="shop-subcategory">
-                  <Link to="/shop/clothing/jerseys" className="shop-sub-link">Jerseys</Link>
-                  <Link to="/shop/clothing/trousers" className="shop-sub-link">Trousers</Link>
-                  <Link to="/shop/clothing/caps" className="shop-sub-link">Caps</Link>
+                  <Link to="/shop/clothing/jerseys" className="shop-sub-link" onClick={handleNavLinkClick}>Jerseys</Link>
+                  <Link to="/shop/clothing/trousers" className="shop-sub-link" onClick={handleNavLinkClick}>Trousers</Link>
+                  <Link to="/shop/clothing/caps" className="shop-sub-link" onClick={handleNavLinkClick}>Caps</Link>
                 </div>
               </div>
             </div>
@@ -145,58 +151,58 @@ const Header = ({ toggleAuthModal, authModal }) => {
         </div>
 
         <div className="families-dropdown">
-          <Link to="/families" className="families-btn main-link">Families</Link>
+          <Link to="/families" className="families-btn main-link" onClick={handleNavLinkClick}>Families</Link>
           <div className="families-menu">
             <div className="families-container">
               <div className="family-item">
-                <Link to="/families/neocore" className="family-link">Neocore</Link>
+                <Link to="/families/neocore" className="family-link" onClick={handleNavLinkClick}>Neocore</Link>
                 <img src="/src/assets/neocore.jpeg" alt="Neocore" />
                 <div className="family-types">
-                  <Link to="/families/neocore/players-edition" className="family-type-link">Players Edition</Link>
-                  <Link to="/families/neocore/pro" className="family-type-link">Pro</Link>
-                  <Link to="/families/neocore/500" className="family-type-link">500</Link>
+                  <Link to="/families/neocore/players-edition" className="family-type-link" onClick={handleNavLinkClick}>Players Edition</Link>
+                  <Link to="/families/neocore/pro" className="family-type-link" onClick={handleNavLinkClick}>Pro</Link>
+                  <Link to="/families/neocore/500" className="family-type-link" onClick={handleNavLinkClick}>500</Link>
                 </div>
               </div>
               <div className="family-item">
-                <Link to="/families/ventus" className="family-link">Ventus</Link>
+                <Link to="/families/ventus" className="family-link" onClick={handleNavLinkClick}>Ventus</Link>
                 <img src="/src/assets/ventus.jpeg" alt="Ventus" />
                 <div className="family-types">
-                  <Link to="/families/ventus/cricket-bats" className="family-type-link">Cricket Bats</Link>
-                  <Link to="/families/ventus/batting-pads" className="family-type-link">Batting Pads</Link>
-                  <Link to="/families/ventus/batting-gloves" className="family-type-link">Batting Gloves</Link>
+                  <Link to="/families/ventus/cricket-bats" className="family-type-link" onClick={handleNavLinkClick}>Cricket Bats</Link>
+                  <Link to="/families/ventus/batting-pads" className="family-type-link" onClick={handleNavLinkClick}>Batting Pads</Link>
+                  <Link to="/families/ventus/batting-gloves" className="family-type-link" onClick={handleNavLinkClick}>Batting Gloves</Link>
                 </div>
               </div>
               <div className="family-item">
-                <Link to="/families/stratos" className="family-link">Stratos</Link>
+                <Link to="/families/stratos" className="family-link" onClick={handleNavLinkClick}>Stratos</Link>
                 <img src="/src/assets/stratos.jpg" alt="Stratos" />
                 <div className="family-types">
-                  <Link to="/families/stratos/harry-brook" className="family-type-link">Harry Brook</Link>
-                  <Link to="/families/stratos/ollie-pope" className="family-type-link">Ollie Pope</Link>
-                  <Link to="/families/stratos/stratos-1.1" className="family-type-link">Stratos 1.1</Link>
+                  <Link to="/families/stratos/harry-brook" className="family-type-link" onClick={handleNavLinkClick}>Harry Brook</Link>
+                  <Link to="/families/stratos/ollie-pope" className="family-type-link" onClick={handleNavLinkClick}>Ollie Pope</Link>
+                  <Link to="/families/stratos/stratos-1.1" className="family-type-link" onClick={handleNavLinkClick}>Stratos 1.1</Link>
                 </div>
               </div>
               <div className="family-item">
-                <Link to="/families/classic" className="family-link">Classic</Link>
+                <Link to="/families/classic" className="family-link" onClick={handleNavLinkClick}>Classic</Link>
                 <img src="/src/assets/scoop.jpg" alt="Classic" />
                 <div className="family-types">
-                  <Link to="/families/classic/shop-all" className="family-type-link">Shop All</Link>
+                  <Link to="/families/classic/shop-all" className="family-type-link" onClick={handleNavLinkClick}>Shop All</Link>
                 </div>
               </div>
               <div className="family-item">
-                <Link to="/families/gem" className="family-link">Gem</Link>
+                <Link to="/families/gem" className="family-link" onClick={handleNavLinkClick}>Gem</Link>
                 <img src="/src/assets/stratos2.webp" alt="Gem" />
                 <div className="family-types">
-                  <Link to="/families/gem/babar-azam" className="family-type-link">Babar Azam</Link>
-                  <Link to="/families/gem/kusal-perera" className="family-type-link">Kusal Perera</Link>
-                  <Link to="/families/gem/gem-2.0" className="family-type-link">Gem 2.0 & 1.1</Link>
+                  <Link to="/families/gem/babar-azam" className="family-type-link" onClick={handleNavLinkClick}>Babar Azam</Link>
+                  <Link to="/families/gem/kusal-perera" className="family-type-link" onClick={handleNavLinkClick}>Kusal Perera</Link>
+                  <Link to="/families/gem/gem-2.0" className="family-type-link" onClick={handleNavLinkClick}>Gem 2.0 & 1.1</Link>
                 </div>
               </div>
               <div className="family-item">
-                <Link to="/families/scoop" className="family-link">Scoop</Link>
+                <Link to="/families/scoop" className="family-link" onClick={handleNavLinkClick}>Scoop</Link>
                 <img src="/src/assets/f1.webp" alt="Scoop" />
                 <div className="family-types">
-                  <Link to="/families/scoop/players" className="family-type-link">Players</Link>
-                  <Link to="/families/scoop/classic" className="family-type-link">Classic</Link>
+                  <Link to="/families/scoop/players" className="family-type-link" onClick={handleNavLinkClick}>Players</Link>
+                  <Link to="/families/scoop/classic" className="family-type-link" onClick={handleNavLinkClick}>Classic</Link>
                 </div>
               </div>
             </div>
@@ -204,31 +210,31 @@ const Header = ({ toggleAuthModal, authModal }) => {
         </div>
 
         <div className="teamwear-dropdown">
-          <Link to="/teamwear" className="teamwear-btn main-link">Teamwear</Link>
+          <Link to="/teamwear" className="teamwear-btn main-link" onClick={handleNavLinkClick}>Teamwear</Link>
           <div className="teamwear-menu">
             <div className="teamwear-container">
               <div className="teamwear-category">
-                <Link to="/teamwear/neocore" className="teamwear-category-link">Neocore</Link>
+                <Link to="/teamwear/neocore" className="teamwear-category-link" onClick={handleNavLinkClick}>Neocore</Link>
                 <div className="teamwear-subcategories">
-                  <Link to="/teamwear/neocore/players-edition" className="teamwear-sub-link">Players Edition</Link>
-                  <Link to="/teamwear/neocore/pro" className="teamwear-sub-link">Pro</Link>
-                  <Link to="/teamwear/neocore/500" className="teamwear-sub-link">500</Link>
+                  <Link to="/teamwear/neocore/players-edition" className="teamwear-sub-link" onClick={handleNavLinkClick}>Players Edition</Link>
+                  <Link to="/teamwear/neocore/pro" className="teamwear-sub-link" onClick={handleNavLinkClick}>Pro</Link>
+                  <Link to="/teamwear/neocore/500" className="teamwear-sub-link" onClick={handleNavLinkClick}>500</Link>
                 </div>
               </div>
               <div className="teamwear-category">
-                <Link to="/teamwear/ventus" className="teamwear-category-link">Ventus</Link>
+                <Link to="/teamwear/ventus" className="teamwear-category-link" onClick={handleNavLinkClick}>Ventus</Link>
                 <div className="teamwear-subcategories">
-                  <Link to="/teamwear/ventus/cricket-bats" className="teamwear-sub-link">Cricket Bats</Link>
-                  <Link to="/teamwear/ventus/batting-pads" className="teamwear-sub-link">Batting Pads</Link>
-                  <Link to="/teamwear/ventus/batting-gloves" className="teamwear-sub-link">Batting Gloves</Link>
+                  <Link to="/teamwear/ventus/cricket-bats" className="teamwear-sub-link" onClick={handleNavLinkClick}>Cricket Bats</Link>
+                  <Link to="/teamwear/ventus/batting-pads" className="teamwear-sub-link" onClick={handleNavLinkClick}>Batting Pads</Link>
+                  <Link to="/teamwear/ventus/batting-gloves" className="teamwear-sub-link" onClick={handleNavLinkClick}>Batting Gloves</Link>
                 </div>
               </div>
               <div className="teamwear-category">
-                <Link to="/teamwear/stratos" className="teamwear-category-link">Stratos</Link>
+                <Link to="/teamwear/stratos" className="teamwear-category-link" onClick={handleNavLinkClick}>Stratos</Link>
                 <div className="teamwear-subcategories">
-                  <Link to="/teamwear/stratos/gem-1.0" className="teamwear-sub-link">Gem 1.0</Link>
-                  <Link to="/teamwear/stratos/sophia-dunkley" className="teamwear-sub-link">Sophia Dunkley</Link>
-                  <Link to="/teamwear/stratos/kane-williamson" className="teamwear-sub-link">Kane Williamson</Link>
+                  <Link to="/teamwear/stratos/gem-1.0" className="teamwear-sub-link" onClick={handleNavLinkClick}>Gem 1.0</Link>
+                  <Link to="/teamwear/stratos/sophia-dunkley" className="teamwear-sub-link" onClick={handleNavLinkClick}>Sophia Dunkley</Link>
+                  <Link to="/teamwear/stratos/kane-williamson" className="teamwear-sub-link" onClick={handleNavLinkClick}>Kane Williamson</Link>
                 </div>
               </div>
             </div>
@@ -236,30 +242,30 @@ const Header = ({ toggleAuthModal, authModal }) => {
         </div>
 
         <div className="athletes-dropdown">
-          <Link to="/athletes" className="athletes-btn main-link">Athletes</Link>
+          <Link to="/athletes" className="athletes-btn main-link" onClick={handleNavLinkClick}>Athletes</Link>
           <div className="athletes-menu">
             <div className="athletes-container">
               <div className="athlete-category">
-                <Link to="/athletes/player-1" className="athlete-category-link">Player 1</Link>
+                <Link to="/athletes/player-1" className="athlete-category-link" onClick={handleNavLinkClick}>Player 1</Link>
                 <div className="athlete-subcategories">
-                  <Link to="/athletes/player-1/batting-gear" className="athlete-sub-link">Batting Gear</Link>
-                  <Link to="/athletes/player-1/bowling-gear" className="athlete-sub-link">Bowling Gear</Link>
+                  <Link to="/athletes/player-1/batting-gear" className="athlete-sub-link" onClick={handleNavLinkClick}>Batting Gear</Link>
+                  <Link to="/athletes/player-1/bowling-gear" className="athlete-sub-link" onClick={handleNavLinkClick}>Bowling Gear</Link>
                 </div>
               </div>
               <div className="athlete-category">
-                <Link to="/athletes/player-2" className="athlete-category-link">Player 2</Link>
+                <Link to="/athletes/player-2" className="athlete-category-link" onClick={handleNavLinkClick}>Player 2</Link>
                 <div className="athlete-subcategories">
-                  <Link to="/athletes/player-2/batting-gear" className="athlete-sub-link">Batting Gear</Link>
-                  <Link to="/athletes/player-2/bowling-gear" className="athlete-sub-link">Bowling Gear</Link>
-                  <Link to="/athletes/player-2/accessories" className="athlete-sub-link">Accessories</Link>
+                  <Link to="/athletes/player-2/batting-gear" className="athlete-sub-link" onClick={handleNavLinkClick}>Batting Gear</Link>
+                  <Link to="/athletes/player-2/bowling-gear" className="athlete-sub-link" onClick={handleNavLinkClick}>Bowling Gear</Link>
+                  <Link to="/athletes/player-2/accessories" className="athlete-sub-link" onClick={handleNavLinkClick}>Accessories</Link>
                 </div>
               </div>
               <div className="athlete-category">
-                <Link to="/athletes/player-3" className="athlete-category-link">Player 3</Link>
+                <Link to="/athletes/player-3" className="athlete-category-link" onClick={handleNavLinkClick}>Player 3</Link>
                 <div className="athlete-subcategories">
-                  <Link to="/athletes/player-3/batting-gear" className="athlete-sub-link">Batting Gear</Link>
-                  <Link to="/athletes/player-3/bowling-gear" className="athlete-sub-link">Bowling Gear</Link>
-                  <Link to="/athletes/player-3/accessories" className="athlete-sub-link">Accessories</Link>
+                  <Link to="/athletes/player-3/batting-gear" className="athlete-sub-link" onClick={handleNavLinkClick}>Batting Gear</Link>
+                  <Link to="/athletes/player-3/bowling-gear" className="athlete-sub-link" onClick={handleNavLinkClick}>Bowling Gear</Link>
+                  <Link to="/athletes/player-3/accessories" className="athlete-sub-link" onClick={handleNavLinkClick}>Accessories</Link>
                 </div>
               </div>
             </div>
@@ -268,8 +274,8 @@ const Header = ({ toggleAuthModal, authModal }) => {
       </div>
 
       <div className="navbar-icons">
-        <Link to="/search" className="icon"><FaSearch /></Link>
-        <Link to="/favourites" className="icon favourites-icon">
+        <Link to="/search" className="icon" onClick={handleNavLinkClick}><FaSearch /></Link>
+        <Link to="/favourites" className="icon favourites-icon" onClick={handleNavLinkClick}>
           <FaHeart />
           {favorites.length > 0 && <span className="favorites-count">{favorites.length}</span>}
         </Link>

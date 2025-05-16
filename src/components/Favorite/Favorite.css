@@ -225,3 +225,372 @@ button:disabled {
     font-size: clamp(0.75rem, 2vw, 0.875rem);
   }
 }
+
+
+
+
+
+
+
+
+
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .navbar {
+    padding: 10px 15px;
+    height: 60px;
+  }
+
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-logo {
+    display: none; /* Hide logo on mobile */
+  }
+
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100vw;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 99;
+    align-items: center;
+    max-height: calc(100vh - 60px);
+    overflow-y: auto;
+  }
+
+  .navbar-links.active {
+    display: flex;
+    animation: slideDown 0.3s ease-in-out;
+  }
+
+  .navbar-icons {
+    gap: 10px;
+  }
+
+  /* Dropdown Menus on Mobile */
+  .shop-nav-menu,
+  .families-menu,
+  .teamwear-menu,
+  .athletes-menu {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+    padding: 10px;
+  }
+
+  .shop-nav-container,
+  .families-container,
+  .teamwear-container,
+  .athletes-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .shop-nav-dropdown:hover .shop-nav-menu,
+  .families-dropdown:hover .families-menu,
+  .teamwear-dropdown:hover .teamwear-menu,
+  .athletes-dropdown:hover .athletes-menu {
+    display: none; /* Prevent hover on mobile */
+  }
+
+  .shop-nav-dropdown.active .shop-nav-menu,
+  .families-dropdown.active .families-menu,
+  .teamwear-dropdown.active .teamwear-menu,
+  .athletes-dropdown.active .athletes-menu {
+    display: block;
+  }
+
+  .main-link {
+    font-size: 16px;
+    padding: 8px 12px;
+  }
+
+  .search-input {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .search-button {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .auth-modal {
+    padding: 1rem;
+  }
+
+  .auth-form h1 {
+    font-size: 1.3rem;
+  }
+
+  .form-group input {
+    padding: 0.6rem;
+  }
+
+  .cart-popup {
+    width: 70%;
+    border-radius: 8px 0 0 8px;
+  }
+
+  .cart-left, .cart-right {
+    padding: 16px;
+  }
+
+  .cart-left h2, .cart-right h2 {
+    font-size: clamp(1.125rem, 2vw, 1.25rem);
+    margin-bottom: 16px;
+  }
+
+  .must-have-item {
+    gap: 12px;
+    padding: 10px;
+  }
+
+  .must-have-image {
+    width: 60px;
+    height: 60px;
+  }
+
+  .must-have-details h3 {
+    font-size: clamp(0.875rem, 2vw, 1rem);
+  }
+
+  .must-have-details p {
+    font-size: clamp(0.75rem, 1.8vw, 0.875rem);
+  }
+
+  .add-to-cart-btn {
+    padding: 8px 14px;
+    font-size: clamp(0.75rem, 2vw, 0.875rem);
+  }
+
+  .cart-item-details h3 {
+    font-size: clamp(0.875rem, 2vw, 1rem);
+  }
+
+  .cart-item-details p {
+    font-size: clamp(0.75rem, 2vw, 0.875rem);
+  }
+
+  .quantity-controls {
+    gap: 8px;
+  }
+
+  .quantity-controls button {
+    padding: 4px 8px;
+  }
+
+  .quantity-controls span {
+    font-size: clamp(0.75rem, 2vw, 0.875rem);
+  }
+
+  .remove-item {
+    font-size: 0.875rem;
+  }
+
+  .cart-footer {
+    padding-top: 16px;
+  }
+
+  .cart-footer p {
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
+  }
+
+  .checkout-btn {
+    padding: 10px 20px;
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    padding: 8px 10px;
+    height: 55px;
+  }
+
+  .menu-toggle {
+    font-size: 20px;
+  }
+
+  .main-link {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+
+  .icon {
+    font-size: 18px;
+  }
+
+  .cart-button {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  .shop-category,
+  .family-item,
+  .teamwear-category,
+  .athlete-category {
+    min-width: 100%;
+  }
+
+  .family-item img {
+    width: 120px;
+    height: 80px;
+  }
+
+  .search-input-container {
+    flex-direction: column;
+  }
+
+  .search-input,
+  .search-button {
+    width: 100%;
+  }
+
+  .search-button {
+    margin-top: 8px;
+  }
+
+  .auth-modal {
+    padding: 0.75rem;
+  }
+
+  .auth-form h1 {
+    font-size: 1.2rem;
+  }
+
+  .form-description,
+  .auth-prompt {
+    font-size: 0.8rem;
+  }
+
+  .submit-btn {
+    padding: 0.6rem;
+  }
+
+  .cart-popup {
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .cart-left, .cart-right {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  .cart-popup-content {
+    flex-direction: column;
+  }
+
+  .cart-left {
+    padding-bottom: 8px;
+  }
+
+  .cart-right {
+    padding-top: 8px;
+  }
+
+  .must-have-item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px;
+  }
+
+  .must-have-image {
+    width: 100%;
+    height: auto;
+    max-height: 120px;
+  }
+
+  .add-to-cart-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .cart-item {
+    padding-bottom: 16px;
+  }
+
+  .quantity-controls {
+    justify-content: space-between;
+  }
+
+  .cart-left h2, .cart-right h2 {
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    margin-bottom: 12px;
+  }
+
+  .must-have-details h3 {
+    font-size: clamp(0.75rem, 2vw, 0.875rem);
+  }
+
+  .must-have-details p {
+    font-size: clamp(0.625rem, 1.8vw, 0.75rem);
+  }
+
+  .add-to-cart-btn {
+    padding: 6px 12px;
+    font-size: clamp(0.625rem, 2vw, 0.75rem);
+  }
+
+  .cart-item-details h3 {
+    font-size: clamp(0.75rem, 2vw, 0.875rem);
+  }
+
+  .cart-item-details p {
+    font-size: clamp(0.625rem, 2vw, 0.75rem);
+  }
+
+  .cart-footer p {
+    font-size: clamp(0.75rem, 2.5vw, 0.875rem);
+  }
+
+  .checkout-btn {
+    padding: 8px16px;
+    font-size: clamp(0.75rem, 2.5vw, 0.875rem);
+  }
+
+  .favorites-count {
+    top: 0;
+  }
+}
+
+/* Slide Down Animation */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Touch target sizes for better mobile UX */
+button,
+a,
+input[type="submit"],
+input[type="button"] {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Prevent zooming on input focus on mobile */
+@media screen and (max-width: 768px) {
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+}

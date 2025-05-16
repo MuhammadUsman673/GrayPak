@@ -1,59 +1,164 @@
 .revo-pro-section {
-    width: 95%; /* Margin from left & right */
-    margin: 50px auto; /* Centers section */
-    height: 550px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    
-    overflow: hidden; /* Prevents image overflow */
-  }
-  
-  .revo-pro-section::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url("../../assets/kusal.webp") center/cover no-repeat;
-    transition: transform 0.5s ease-in-out;
-    
-  }
-  
-  .revo-pro-section:hover::before {
-    transform: scale(1.1); /* Zooms in the background inside */
-  }
-  
-  .revo-content {
-    position: relative;
-    text-align: center;
-    /* background: rgba(0, 0, 0, 0.5);  */
-    padding: 20px 40px;
-    border-radius: 5px;
+  width: 95%;
+  margin: 50px auto;
+  height: 550px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.revo-pro-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../../assets/kusal.webp") center/cover no-repeat;
+  transition: transform 0.5s ease-in-out;
+  z-index: 1;
+  filter: brightness(0.9); /* Slightly darker for better text contrast */
+}
+
+.revo-pro-section:hover::before {
+  transform: scale(1.05); /* Slightly reduced zoom for better mobile experience */
+}
+
+.revo-content {
+  position: relative;
+  text-align: center;
+  padding: 20px 40px;
+  border-radius: 5px;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.revo-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Better readability */
+  line-height: 1.2;
+}
+
+.shop-now-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid white;
+  border-radius: 4px;
+  transition: all 0.3s ease-in-out;
+  min-width: 180px;
+}
+
+.shop-now-btn:hover {
+  background: rgba(51, 51, 51, 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+  .revo-pro-section {
+      height: 500px;
+      width: 93%;
   }
   
   .revo-title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: white;
-    margin-bottom: 20px;
+      font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .revo-pro-section {
+      height: 450px;
+      width: 92%;
+  }
+  
+  .revo-title {
+      font-size: 2rem;
   }
   
   .shop-now-btn {
-    display: inline-block;
-    padding: 12px 24px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: white;
-    /* background: #000; */
-    text-decoration: none;
-  
-    transition: background 0.3s ease-in-out;
+      padding: 10px 20px;
+      font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .revo-pro-section {
+      height: 400px;
+      width: 90%;
   }
   
-  .shop-now-btn:hover {
-    background: #333;
+  .revo-content {
+      padding: 20px 30px;
   }
   
+  .revo-title {
+      font-size: 1.8rem;
+  }
+  
+  .shop-now-btn {
+      padding: 10px 18px;
+      font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .revo-pro-section {
+      height: 350px;
+      width: 88%;
+  }
+  
+  .revo-title {
+      font-size: 1.6rem;
+      margin-bottom: 15px;
+  }
+  
+  .shop-now-btn {
+      padding: 8px 16px;
+      min-width: 160px;
+  }
+}
+
+@media (max-width: 400px) {
+  .revo-pro-section {
+      height: 300px;
+      width: 86%;
+  }
+  
+  .revo-title {
+      font-size: 1.4rem;
+  }
+  
+  .shop-now-btn {
+      padding: 8px 14px;
+      font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .revo-pro-section {
+      height: 250px;
+      width: 84%;
+  }
+  
+  .revo-title {
+      font-size: 1.2rem;
+  }
+  
+  .shop-now-btn {
+      font-size: 0.8rem;
+      padding: 6px 12px;
+  }
+}
